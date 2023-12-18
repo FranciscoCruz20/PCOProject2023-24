@@ -1,21 +1,22 @@
 package domain;
 
+import java.util.ArrayList;
+
 public class Medicamento {
 
     private String nome;
     private String forma_farmaceutica;
     private float dosagem;
     private double contato_farmacovigilancia;
-    private SubstanciaAtiva substanciaAtiva;
+    private ArrayList<SubstanciaAtiva> substancias_ativas;
 
-    public Medicamento(String nome, String forma_farmaceutica, float dosagem, double contato_farmacovigilancia, SubstanciaAtiva substanciaAtiva) {
+    public Medicamento(String nome, String forma_farmaceutica, float dosagem, double contato_farmacovigilancia, ArrayList<SubstanciaAtiva> substancias_ativas) {
         this.nome = nome;
         this.forma_farmaceutica = forma_farmaceutica;
         this.dosagem = dosagem;
         this.contato_farmacovigilancia = contato_farmacovigilancia;
-        this.substanciaAtiva = substanciaAtiva;
+        this.substancias_ativas = substancias_ativas;
     }
-
     public String getNome() {
         return nome;
     }
@@ -48,22 +49,22 @@ public class Medicamento {
         this.contato_farmacovigilancia = contato_farmacovigilancia;
     }
 
-    public SubstanciaAtiva getSubstanciaAtiva() {
-        return substanciaAtiva;
+    public ArrayList<SubstanciaAtiva> getSubstancias_Ativas() {
+        return substancias_ativas;
     }
 
-    public void setSubstanciaAtiva(SubstanciaAtiva substanciaAtiva) {
-        this.substanciaAtiva = substanciaAtiva;
+    public void setSubstanciaAtiva(ArrayList<SubstanciaAtiva> substancias_ativas) {
+        this.substancias_ativas = substancias_ativas;
     }
 
     @Override
     public String toString() {
-        return "domain.Medicamento{" +
+        return "Medicamento{" +
                 "nome='" + nome + '\'' +
                 ", forma_farmaceutica='" + forma_farmaceutica + '\'' +
                 ", dosagem=" + dosagem +
                 ", contato_farmacovigilancia=" + contato_farmacovigilancia +
-                ", substanciaAtiva=" + substanciaAtiva +
+                ", substancias_ativas=" + substancias_ativas +
                 '}';
     }
 }

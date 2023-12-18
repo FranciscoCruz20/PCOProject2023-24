@@ -1,12 +1,35 @@
 package domain;
 
-public class Administrador extends Utilizador {
+public class Administrador{
 
+    private String username;
+    private String password;
     private String nome;
 
-    public Administrador(String username, String password, String nome) {
-        super(username, password);
-        this.nome = nome;
+    public Administrador() {
+        this.username = "admin";
+        this.password = "12345";
+        this.nome = "ADMIN";
+    }
+
+    public boolean login(String username, String password) {
+        return Administrador.this.username.equals(username) && Administrador.this.password.equals(password);
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getNome() {

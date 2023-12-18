@@ -11,6 +11,10 @@ public class IndustriaFramaceutica extends Utilizador {
         this.contato = contato;
     }
 
+    public void criar_IndustriaFarmaceutica(){
+        IndustrialFramaceuticoCreator.criar_IndustriaFarmaceutica();
+    }
+
     public String getNome() {
         return nome;
     }

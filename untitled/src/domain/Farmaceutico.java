@@ -1,5 +1,7 @@
 package domain;
 
+import java.io.FileNotFoundException;
+
 public class Farmaceutico extends Utilizador {
 
     private String nome;
@@ -9,6 +11,10 @@ public class Farmaceutico extends Utilizador {
         super(username, password);
         this.nome = nome;
         this.contato = contato;
+    }
+
+    public static void criar_Farmaceutico() throws FileNotFoundException {
+        FarmaceuticoCreator.criar_Farmaceutico();
     }
 
     public String getNome() {
