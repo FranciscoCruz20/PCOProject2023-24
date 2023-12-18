@@ -8,6 +8,10 @@ public class SubstanciaAtiva {
         this.nome = nome;
     }
 
+    /*public static void criar_SubstanciaAtiva(){
+        SubstanciaAtivaCreator.criar_SubstanciaAtiva();
+    }*/
+
     public String getNome() {
         return nome;
     }

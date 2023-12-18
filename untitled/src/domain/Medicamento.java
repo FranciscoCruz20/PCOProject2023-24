@@ -17,6 +17,11 @@ public class Medicamento {
         this.contato_farmacovigilancia = contato_farmacovigilancia;
         this.substancias_ativas = substancias_ativas;
     }
+
+
+    public void criar_Medicamento(ArrayList<SubstanciaAtiva> catalogo_substancias_ativas){
+        MedicamentoCreator.criar_Medicamento(catalogo_substancias_ativas);
+    }
     public String getNome() {
         return nome;
     }
