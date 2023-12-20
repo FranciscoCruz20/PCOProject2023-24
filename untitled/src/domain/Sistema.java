@@ -73,6 +73,22 @@ public class Sistema {
         this.administrador = administrador;
     }
 
+    public ArrayList<InteracaoAlimentar> pesquisarInteracaoAlimentar(String nomemedicamento){
+        ArrayList<InteracaoAlimentar> InteracoesAlimentares = new ArrayList<>();
+        for (Medicamento medicamento: lista_medicamentos){
+            if (nomemedicamento.equals(medicamento.getNome())){
+                for (SubstanciaAtiva substanciaAtiva: medicamento.getSubstancias_Ativas()){
+                    for (InteracaoAlimentar interacaoalimentar: dic_interacoes_alimentares.get(substanciaAtiva)){
+                        System.out.println(interacaoalimentar);
+                        InteracoesAlimentares.add(interacaoalimentar);
+                    }
+                }
+                return InteracoesAlimentares;
+            }
+        }
+        return InteracoesAlimentares;
+    }
+
     @Override
     public String toString() {
         return "Sistema{" +
