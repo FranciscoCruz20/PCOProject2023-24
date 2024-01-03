@@ -13,7 +13,7 @@ public class HandlerUC05 {
                 "*Alimento" +
                 "*Efeito" +
                 "*Referencia bibliografica");
-        String substenciaAtiva = input.nextLine();
+        String substanciaAtiva = input.nextLine();
         String explicacao = input.nextLine();
         String alimento = input.nextLine();
         String efeito = input.nextLine();
@@ -29,7 +29,7 @@ public class HandlerUC05 {
             System.out.println("Confirmar criação?(yes/cancelar)");
             String opcaob = input.nextLine();
             if (opcaob == "yes") {
-                InteracaoAlimentarCreator.criar_Interacao_Alimentar(substenciaAtiva,explicacao,alimento,efeito,referencia_bibliografica);
+                InteracaoAlimentarCreator.criar_Interacao_Alimentar(substanciaAtiva,explicacao,alimento,efeito,referencia_bibliografica);
 
             }
             else if (opcaob == "cancelar") {
