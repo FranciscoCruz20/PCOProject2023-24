@@ -4,176 +4,148 @@ import domain.*;
 import java.io.IOException;
 import java.util.Scanner;
 
-
-/**
- * Classe responsável pelo arranque de todos os casos de uso
- */
 public class Menu {
 
-    /**
-     * Método que representa o menu inicial do programa coma acesso ao menu de administrador e de utilizador
-     * @throws IOException
-     */
-    public static void menu_inicial() throws IOException {
+
+    public static void inical_menu() throws IOException {
         Scanner input = new Scanner(System.in);
         while (true) {
-            System.out.println("Menu:");
-            System.out.println("1 - Menu de administrador");
-            System.out.println("2 - Menu de utilizador");
+            System.out.println("Welcome new Utent, what you want to do ");
+            System.out.println("1 - Login as an Admin");
+            System.out.println("2 - Login as an User");
+            System.out.println("3 - Search drugs");
 
-            int opcao = input.nextInt();
+            int option = input.nextInt();
             input.nextLine();
 
-            if (opcao == 1) {
+            if (option == 1) {
                 menu_admin();
             }
-            if (opcao == 2) {
-                menu_confirmacao_utilizador();
+            if (option == 2) {
+                menu_confirm_user();
+            }
+            if (option == 3) {
+                // Implementar a pesquisa de medicamentos
             }
             else {
-                System.out.println("Opção inválida");
+                System.out.println("Invalid option");
             }
         }
     }
 
-    //Administrador:
 
-    /**
-     * Método que apresenta o menu de administrador
-     * Com autenticação de dados de acesso
-     * Criação e verificação de utilizadores
-     * Criação e verificação de clientes
-     * @throws IOException
-     */
     public static void menu_admin() throws IOException {
 
-        Administrador administrador = new Administrador();
+        Administrator administrator = new Administrator();
         Scanner input = new Scanner(System.in);
 
         while (true) {
 
-            System.out.println("Insira o nome de utilizador e password:");
+            System.out.println("Digit your Username and Password:");
             System.out.print("Username: ");
             String username = input.nextLine();
             System.out.print("Password: ");
             String password = input.nextLine();
 
-            if (administrador.login(username, password)) {
+            if (administrator.login(username, password)) {
                 while (true) {
-                    System.out.println("Menu de Administrador:");
-                    System.out.println("1 - Gerir Utilizadores");
-                    System.out.println("2 - Gerir Substâncias Ativas");
-                    System.out.println("3 - Sair");
+                    System.out.println("Administrator Menu:");
+                    System.out.println("1 - Manage Users");
+                    System.out.println("2 - Manage Substances");
+                    System.out.println("3 - Exit");
 
-                    int opcao = input.nextInt();
+                    int option = input.nextInt();
                     input.nextLine();
 
-                    if (opcao == 1) {
-                        menu_gestao_utilizadores();
-                    }
-                    if (opcao == 2) {
+                    if (option == 1) {
 
                     }
-                    else if (opcao == 3) {
+                    if (option == 2) {
 
-                    }
-                    else if (opcao == 4) {
+                    } else if (option == 3) {
+                        inical_menu();
 
-                    }
-                    else if (opcao == 5) {
-
-                        menu_inicial();
-                    }
-                    else {
-                        System.out.println("Opção inválida");
+                    } else {
+                        System.out.println("Invalid option");
                     }
                 }
-            } else{
+            } else {
 
-                System.out.println("Username ou password incorretos");
+                System.out.println("Invalid Username or Password");
             }
         }
     }
 
-    //Utilizadores:
-
-    /**
-     * Método que apresenta o menu de utilizador
-     * Criação de licenças
-     * Criação de utilizadorestma
-     * Criação de pools
-     * @throws IOException
-     */
-    public static void menu_utilizador() throws IOException {
+    public static void menu_confirm_user() throws IOException {
 
         Scanner input = new Scanner(System.in);
-
-        while (true) {
-
-            System.out.println("Menu utilizador:");
-            System.out.println("1-Criar licença");
-            System.out.println("2-Criar utilizadorTMA");
-            System.out.println("3-Criar uma pool");
-            System.out.println("4-Sair");
-            int opcao = input.nextInt();
-            input.nextLine();
-
-            if (opcao == 1) {
-                HandlerUC04.criar_licenca();
-            }
-            else if (opcao == 2){
-                HandlerUC06.inserir_dados_tma();
-            }
-            else if (opcao == 3) {
-                Pool.criar_pool();
-            }
-            else if (opcao == 4) {
-                menu_inicial();
-            }
-            else {
-                System.out.println("Opção inválida");
-            }
-        }
-    }
-
-    /**
-     * Método que representa o menu de autenticação de acesso ao menu de utilziadores
-     * @throws IOException
-     */
-    public static void menu_confirmacao_utilizador() throws IOException {
-
-        Scanner input = new Scanner(System.in);
-        System.out.println("Menu de utilizadores:");
-        System.out.println("1- Farmaceutico");
-        System.out.println("2- Indistruia farmaceutica");
-        System.out.println("3- Sair");
+        System.out.println("Users Menu:");
+        System.out.println("Select your role:");
+        System.out.println("1- Pharmaceutical");
+        System.out.println("2- Laboratorie");
+        System.out.println("3- Exit");
         int opcao = input.nextInt();
         input.nextLine();
-        if (opcao == 1){
+        if (opcao == 1) {
             while (true) {
-                System.out.println("Insira o username e a sua password:");
+                System.out.println("Digit your Username and Password:");
                 System.out.print("Username: ");
                 String username = input.nextLine();
                 System.out.print("Password: ");
                 String password = input.nextLine();
+                // Chamar o login
+            }
+        }
+        else if (opcao == 2) {
+            while (true) {
+                System.out.println("Digit your Username and Password:");
+                System.out.print("Username: ");
+                String username = input.nextLine();
+                System.out.print("Password: ");
+                String password = input.nextLine();
+                // Chamar o login
+            }
+        }
+        else if (opcao == 3) {
+            inical_menu();
         }
     }
-}
 
-public static void  menu_gestao_utilizadores(){
-    Scanner input = new Scanner(System.in);
-    System.out.println("Menu de gestão de utilizadores:");
-    System.out.println("1- Apagar utilizador");
-    System.out.println("2- Criar utilizador");
-    System.out.println("3- Sair");
-    int opcao = input.nextInt();
-    input.nextLine();
-    if (opcao == 1){
+    public static void Phamaceutical_menu() throws IOException {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Phamaceutical Menu:");
+        System.out.println("1 - Manage your food interactions");
+        System.out.println("1 - Create food interaction");
+        System.out.println("2- Exit");
+        int opcao = input.nextInt();
+        input.nextLine();
+        if (opcao == 1) {
+            //Implementar a pesquisa das interações que fizeram
+        }
+        if (opcao == 2) {
 
+        }
+        if (opcao == 3) {
+            inical_menu();
+        }
     }
-    if (opcao == 2){
 
+    public static void Laboratorie_menu() throws IOException {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Laboratorie Menu:");
+        System.out.println("1- Manage your drugs");
+        System.out.println("2- Search substances");
+        System.out.println("3- Exit");
+        int opcao = input.nextInt();
+        input.nextLine();
+        if (opcao == 1) {
+
+        }
+        if (opcao == 2) {
+
+        }
+        if (opcao == 3) {
+            inical_menu();
+        }
     }
-    if (opcao == 3){
-}
 }

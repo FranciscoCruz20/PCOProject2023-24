@@ -19,10 +19,6 @@ public class Drug {
     }
 
 
-    public void criar_Medicamento(ArrayList<Substance> catalogue_substances){
-        DrugCreator.create_drug(catalogue_substances);
-    }
-
     public String getName() {
         return name;
     }

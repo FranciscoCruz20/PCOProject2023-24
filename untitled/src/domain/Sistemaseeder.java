@@ -1,6 +1,6 @@
 package domain;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -16,11 +16,11 @@ public class Sistemaseeder {
     }
 
     public void gravar(){
-        Gson gson = new Gson();
-        String jsonLista =gson.toJson(lista);
+        //Gson gson = new Gson();
+        //String jsonLista =gson.toJson(lista);
         try{
             FileWriter writer = new FileWriter(filename);
-            writer.write(jsonLista);
+        //    writer.write(jsonLista);
             writer.close();
         } catch (IOException i){
             i.printStackTrace();

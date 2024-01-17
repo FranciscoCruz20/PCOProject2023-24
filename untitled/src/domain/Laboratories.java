@@ -1,6 +1,6 @@
 package domain;
 
-public class Laboratories extends Utilizador {
+public class Laboratories extends User {
 
     private String name;
     private String surveillance;

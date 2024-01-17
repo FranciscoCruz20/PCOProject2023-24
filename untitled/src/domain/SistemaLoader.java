@@ -1,7 +1,7 @@
 package domain;
 
 public class SistemaLoader {
-    public void criar_Sistema(){
+    public void create_System (){
 
     }
 }

@@ -2,7 +2,7 @@ package domain;
 
 import java.io.FileNotFoundException;
 
-public class Pharmaceutical extends Utilizador {
+public class Pharmaceutical extends User {
 
     private String name;
     private String surveillance;

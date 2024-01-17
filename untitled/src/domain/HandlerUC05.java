@@ -29,7 +29,7 @@ public class HandlerUC05 {
             System.out.println("Confirmar criação?(yes/cancelar)");
             String opcaob = input.nextLine();
             if (opcaob == "yes") {
-                FoodInteractionsCreator.create_foodInteractions(substances,explanation,food,effect,bibliography);
+                //FoodInteractionsCreator.create_foodInteractions(substances,explanation,food,effect,bibliography);
 
             }
             else if (opcaob == "cancelar") {

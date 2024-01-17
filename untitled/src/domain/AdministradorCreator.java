@@ -1,7 +1,7 @@
 package domain;
 
 public class AdministradorCreator {
-    public Administrador criar_administrador(){
-        return new Administrador();
+    public Administrator create_Administrator(){
+        return new Administrator();
     }
 }

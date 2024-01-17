@@ -1,19 +1,19 @@
 package domain;
 
-public class Administrador{
+public class Administrator {
 
     private String username;
     private String password;
-    private String nome;
+    private String name;
 
-    public Administrador() {
+    public Administrator() {
         this.username = "admin";
         this.password = "12345";
-        this.nome = "ADMIN";
+        this.name = "ADMIN";
     }
 
     public boolean login(String username, String password) {
-        return Administrador.this.username.equals(username) && Administrador.this.password.equals(password);
+        return Administrator.this.username.equals(username) && Administrator.this.password.equals(password);
     }
 
     public String getUsername() {
@@ -32,18 +32,18 @@ public class Administrador{
         this.password = password;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "domain.Administrador{" +
-                "nome='" + nome + '\'' +
+                "nome='" + name + '\'' +
                 '}';
     }
 }

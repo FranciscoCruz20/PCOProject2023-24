@@ -9,84 +9,92 @@ public class Sistema {
     private Map<Substance, ArrayList<FoodInteractions>> dic_foodInteractions;
     private ArrayList<Pharmaceutical> lista_pharmaceuticals;
     private ArrayList<Laboratories> list_laboratories;
-    private Administrador administrador;
+    private Administrator administrator;
 
     public Sistema(ArrayList<Drug> lista_drugs,
                    ArrayList<Substance> lista_substancias_ativas,
                    Map<Substance, ArrayList<FoodInteractions>> dic_interacoes_alimentares,
                    ArrayList<Pharmaceutical> lista_pharmaceuticals,
                    ArrayList<Laboratories> lista_industrias_farmaceuticas,
-                   Administrador administrador) {
+                   Administrator administrator) {
         this.lista_drugs = lista_drugs;
         this.list_substances = list_substances;
         this.dic_foodInteractions = dic_foodInteractions;
         this.lista_pharmaceuticals = lista_pharmaceuticals;
         this.list_laboratories = list_laboratories;
-        this.administrador = administrador;
+        this.administrator = administrator;
     }
 
-    public ArrayList<Drug> getLista_medicamentos() {
+    public ArrayList<Drug> getLista_drugs() {
         return lista_drugs;
     }
 
-    public void setLista_medicamentos(ArrayList<Drug> lista_drugs) {
+    public void setLista_drugs(ArrayList<Drug> lista_drugs) {
         this.lista_drugs = lista_drugs;
     }
 
-    public ArrayList<Substance> getLista_substancias_ativas() {
+    public ArrayList<Substance> getList_substances() {
         return list_substances;
     }
 
-    public void setLista_substancias_ativas(ArrayList<Substance> lista_substancias_ativas) {
-        this.list_substances = lista_substancias_ativas;
+    public void setList_substances(ArrayList<Substance> list_substances) {
+        this.list_substances = list_substances;
     }
 
-    public Map<Substance, ArrayList<FoodInteractions>> getDic_interacoes_alimentares() {
+    public Map<Substance, ArrayList<FoodInteractions>> getDic_foodInteractions() {
         return dic_foodInteractions;
     }
 
-    public void setDic_interacoes_alimentares(Map<Substance, ArrayList<FoodInteractions>> dic_interacoes_alimentares) {
-        this.dic_foodInteractions = dic_interacoes_alimentares;
+    public void setDic_foodInteractions(Map<Substance, ArrayList<FoodInteractions>> dic_foodInteractions) {
+        this.dic_foodInteractions = dic_foodInteractions;
     }
 
-    public ArrayList<Pharmaceutical> getLista_farmaceuticos() {
+    public ArrayList<Pharmaceutical> getLista_pharmaceuticals() {
         return lista_pharmaceuticals;
     }
 
-    public void setLista_farmaceuticos(ArrayList<Pharmaceutical> lista_pharmaceuticals) {
+    public void setLista_pharmaceuticals(ArrayList<Pharmaceutical> lista_pharmaceuticals) {
         this.lista_pharmaceuticals = lista_pharmaceuticals;
     }
 
-    public ArrayList<Laboratories> getLista_industrias_farmaceuticas() {
+    public ArrayList<Laboratories> getList_laboratories() {
         return list_laboratories;
     }
 
-    public void setLista_industrias_farmaceuticas(ArrayList<Laboratories> lista_industrias_farmaceuticas) {
-        this.list_laboratories = lista_industrias_farmaceuticas;
+    public void setList_laboratories(ArrayList<Laboratories> list_laboratories) {
+        this.list_laboratories = list_laboratories;
     }
 
-    public Administrador getAdministrador() {
-        return administrador;
+    public Administrator getAdministrator() {
+        return administrator;
     }
 
-    public void setAdministrador(Administrador administrador) {
-        this.administrador = administrador;
+    public void setAdministrator(Administrator administrator) {
+        this.administrator = administrator;
     }
 
-    public ArrayList<FoodInteractions> pesquisarInteracaoAlimentar(String nomemedicamento){
-        ArrayList<FoodInteractions> InteracoesAlimentares = new ArrayList<>();
+    public Administrator getAdministrador() {
+        return administrator;
+    }
+
+    public void setAdministrador(Administrator administrator) {
+        this.administrator = administrator;
+    }
+
+    public ArrayList<FoodInteractions> searchFoodInteractions(String drugname){
+        ArrayList<FoodInteractions> FoodInteractions = new ArrayList<>();
         for (Drug drug : lista_drugs){
-            if (nomemedicamento.equals(drug.getNome())){
-                for (Substance substanciaAtiva: drug.getSubstancias_Ativas()){
-                    for (FoodInteractions interacaoalimentar: dic_foodInteractions.get(substanciaAtiva)){
-                        System.out.println(interacaoalimentar);
-                        InteracoesAlimentares.add(interacaoalimentar);
+            if (drugname.equals(drug.getName())){
+                for (Substance substance: drug.getSubstances()){
+                    for (FoodInteractions foodInteractions: dic_foodInteractions.get(substance)){
+                        System.out.println(foodInteractions);
+                        FoodInteractions.add(foodInteractions);
                     }
                 }
-                return InteracoesAlimentares;
+                return FoodInteractions;
             }
         }
-        return InteracoesAlimentares;
+        return FoodInteractions;
     }
 
     @Override
