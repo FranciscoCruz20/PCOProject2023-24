@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class HandlerUC05 {
 
-    public void criar_Interacao_Alimentar(){
+    public void create_foodInteractions(){
         Scanner input = new Scanner(System.in);
 
         System.out.println("Insira os daseguinte forma:");
@@ -13,11 +13,11 @@ public class HandlerUC05 {
                 "*Alimento" +
                 "*Efeito" +
                 "*Referencia bibliografica");
-        String substenciaAtiva = input.nextLine();
-        String explicacao = input.nextLine();
-        String alimento = input.nextLine();
-        String efeito = input.nextLine();
-        String referencia_bibliografica = input.nextLine();
+        String substances = input.nextLine();
+        String explanation = input.nextLine();
+        String food = input.nextLine();
+        String effect = input.nextLine();
+        String bibliography = input.nextLine();
         System.out.println("Pretende criar com os dados inseridos?(yes/no)");
         String opcao = input.nextLine();
         if (opcao == "yes") {
@@ -29,7 +29,7 @@ public class HandlerUC05 {
             System.out.println("Confirmar criação?(yes/cancelar)");
             String opcaob = input.nextLine();
             if (opcaob == "yes") {
-                InteracaoAlimentarCreator.criar_Interacao_Alimentar(substenciaAtiva,explicacao,alimento,efeito,referencia_bibliografica);
+                FoodInteractionsCreator.create_foodInteractions(substances,explanation,food,effect,bibliography);
 
             }
             else if (opcaob == "cancelar") {

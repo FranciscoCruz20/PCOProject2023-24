@@ -2,9 +2,9 @@ package domain;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class FarmaceuticoCreator {
+public class PharmaceuticalCreator {
 
-    public static Farmaceutico criar_Farmaceutico() throws FileNotFoundException{
+    public static Pharmaceutical create_Pharmaceutical() throws FileNotFoundException{
 
         Scanner input = new Scanner(System.in);
 
@@ -14,13 +14,13 @@ public class FarmaceuticoCreator {
         System.out.print("password: ");
         String password = input.nextLine();
         System.out.print("Nome do Farmaceutico: ");
-        String nome = input.nextLine();
+        String name = input.nextLine();
         System.out.print("Contato do Farmaceutico: ");
-        String contato = input.nextLine();
+        String surveillance = input.nextLine();
 
-        Farmaceutico farmaceutico = new Farmaceutico(username,password,nome, contato);
+        Pharmaceutical pharmaceutical = new Pharmaceutical(username,password,name, surveillance);
 
-        return new Farmaceutico(username, password, nome, contato);
+        return new Pharmaceutical(username, password, name, surveillance);
     }
 
 }

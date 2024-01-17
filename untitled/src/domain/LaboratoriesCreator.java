@@ -2,9 +2,9 @@ package domain;
 
 import java.util.Scanner;
 
-public class IndustrialFramaceuticoCreator {
+public class LaboratoriesCreator {
 
-    public static IndustriaFramaceutica criar_IndustriaFarmaceutica() {
+    public static Laboratories criar_Laboratories() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Insira o username, password e nome da Industria Farmaceutica:");
@@ -13,12 +13,12 @@ public class IndustrialFramaceuticoCreator {
         System.out.print("password: ");
         String password = input.nextLine();
         System.out.print("Nome da Industria: ");
-        String nome = input.nextLine();
+        String name = input.nextLine();
         System.out.print("Contato da Industria: ");
-        String contato = input.nextLine();
+        String surveillance = input.nextLine();
 
-        IndustriaFramaceutica industriaFramaceutica = new IndustriaFramaceutica(username,password,nome, contato);
+        Laboratories laboratories = new Laboratories(username,password,name, surveillance);
 
-        return new IndustriaFramaceutica(username, password, nome, contato);
+        return new Laboratories(username, password, name, surveillance);
     }
 }
