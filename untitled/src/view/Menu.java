@@ -60,18 +60,16 @@ public class Menu {
 
             if (administrador.login(username, password)) {
                 while (true) {
-                    System.out.println("Menu:");
-                    System.out.println("1 - ");
-                    System.out.println("2 - ");
-                    System.out.println("3 - ");
-                    System.out.println("4 - ");
-                    System.out.println("5 - Sair");
+                    System.out.println("Menu de Administrador:");
+                    System.out.println("1 - Gerir Utilizadores");
+                    System.out.println("2 - Gerir Substâncias Ativas");
+                    System.out.println("3 - Sair");
 
                     int opcao = input.nextInt();
                     input.nextLine();
 
                     if (opcao == 1) {
-
+                        menu_gestao_utilizadores();
                     }
                     if (opcao == 2) {
 
@@ -160,4 +158,22 @@ public class Menu {
                 String password = input.nextLine();
         }
     }
+}
+
+public static void  menu_gestao_utilizadores(){
+    Scanner input = new Scanner(System.in);
+    System.out.println("Menu de gestão de utilizadores:");
+    System.out.println("1- Apagar utilizador");
+    System.out.println("2- Criar utilizador");
+    System.out.println("3- Sair");
+    int opcao = input.nextInt();
+    input.nextLine();
+    if (opcao == 1){
+
+    }
+    if (opcao == 2){
+
+    }
+    if (opcao == 3){
+}
 }
