@@ -5,9 +5,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
+    Sistema sistema;
 
+    public void Menu(){
+        this.sistema = SistemaLoader.create_System();
+    }
 
-    public static void inical_menu() throws IOException {
+    public void inical_menu() throws IOException {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println("Welcome new Utent, what you want to do ");
@@ -19,10 +23,10 @@ public class Menu {
             input.nextLine();
 
             if (option == 1) {
-                menu_admin();
+                this.menu_admin();
             }
             if (option == 2) {
-                menu_confirm_user();
+                this.menu_confirm_user();
             }
             if (option == 3) {
                 // Implementar a pesquisa de medicamentos
@@ -33,8 +37,7 @@ public class Menu {
         }
     }
 
-
-    public static void menu_admin() throws IOException {
+    public void menu_admin() throws IOException {
 
         Administrator administrator = new Administrator();
         Scanner input = new Scanner(System.in);
@@ -63,20 +66,19 @@ public class Menu {
                     if (option == 2) {
 
                     } else if (option == 3) {
-                        inical_menu();
+                        this.inical_menu();
 
                     } else {
                         System.out.println("Invalid option");
                     }
                 }
             } else {
-
                 System.out.println("Invalid Username or Password");
             }
         }
     }
 
-    public static void menu_confirm_user() throws IOException {
+    public void menu_confirm_user() throws IOException {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Users Menu:");
@@ -107,11 +109,11 @@ public class Menu {
             }
         }
         else if (opcao == 3) {
-            inical_menu();
+            this.inical_menu();
         }
     }
 
-    public static void Phamaceutical_menu() throws IOException {
+    public void Phamaceutical_menu() throws IOException {
         Scanner input = new Scanner(System.in);
         System.out.println("Phamaceutical Menu:");
         System.out.println("1 - Manage your food interactions");
@@ -126,11 +128,11 @@ public class Menu {
 
         }
         if (opcao == 3) {
-            inical_menu();
+            this.inical_menu();
         }
     }
 
-    public static void Laboratorie_menu() throws IOException {
+    public void Laboratorie_menu() throws IOException {
         Scanner input = new Scanner(System.in);
         System.out.println("Laboratorie Menu:");
         System.out.println("1- Manage your drugs");
@@ -145,7 +147,7 @@ public class Menu {
 
         }
         if (opcao == 3) {
-            inical_menu();
+            this.inical_menu();
         }
     }
 }

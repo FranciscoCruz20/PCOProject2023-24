@@ -7,7 +7,7 @@ public class HandlerUC03 {
 
     // Falta implementar a verificação no json
 
-    public void create_Substance(){
+    public static void create_Substance(){
         Scanner input = new Scanner(System.in);
 
         System.out.println("Insira os dados da Substancia Ativa:");

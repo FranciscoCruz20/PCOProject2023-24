@@ -25,6 +25,15 @@ public class Sistema {
         this.administrator = administrator;
     }
 
+    public Sistema(){
+        this.lista_drugs = lista_drugs;
+        this.list_substances = list_substances;
+        this.dic_foodInteractions = dic_foodInteractions;
+        this.lista_pharmaceuticals = lista_pharmaceuticals;
+        this.list_laboratories = list_laboratories;
+        this.administrator = administrator;
+    }
+
     public ArrayList<Drug> getLista_drugs() {
         return lista_drugs;
     }

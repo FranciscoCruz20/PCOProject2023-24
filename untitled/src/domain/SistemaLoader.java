@@ -1,7 +1,20 @@
 package domain;
 
-public class SistemaLoader {
-    public void create_System (){
+import com.google.gson.Gson;
 
+import java.io.FileReader;
+import java.io.IOException;
+
+public class SistemaLoader {
+    public static Sistema create_System (){
+        String filePath = "dataset.json";
+        try (FileReader reader = new FileReader(filePath)) {
+            Gson gson = new Gson();
+            return gson.fromJson(reader, Sistema.class);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new Sistema();
+        }
     }
 }
