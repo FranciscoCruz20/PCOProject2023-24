@@ -1,5 +1,8 @@
 package view;
-import domain.*;
+
+import domain.Administrator;
+import domain.Sistema;
+import domain.SistemaLoader;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -7,12 +10,13 @@ import java.util.Scanner;
 public class Menu {
     Sistema sistema;
 
-    public void Menu(){
+    public Menu(){
         this.sistema = SistemaLoader.create_System();
     }
 
     public void inical_menu() throws IOException {
         Scanner input = new Scanner(System.in);
+        System.out.println(this.sistema);
         while (true) {
             System.out.println("Welcome new Utent, what you want to do ");
             System.out.println("1 - Login as an Admin");
