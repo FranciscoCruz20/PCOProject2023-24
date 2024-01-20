@@ -4,13 +4,13 @@ import java.io.FileNotFoundException;
 
 public class Pharmaceutical extends User {
 
-    private String name;
-    private String surveillance;
+    private String Name;
+    private String Surveillance;
 
     public Pharmaceutical(String username, String password, String name, String surveillance) {
         super(username, password);
-        this.name = name;
-        this.surveillance = surveillance;
+        this.Name = name;
+        this.Surveillance = surveillance;
     }
 
     public static void create_Pharmaceutical() throws FileNotFoundException {
@@ -18,18 +18,18 @@ public class Pharmaceutical extends User {
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.Name = name;
     }
 
     public String getSurveillance() {
-        return surveillance;
+        return Surveillance;
     }
 
     public void setSurveillance(String surveillance) {
-        this.surveillance = surveillance;
+        this.Surveillance = surveillance;
     }
 }
