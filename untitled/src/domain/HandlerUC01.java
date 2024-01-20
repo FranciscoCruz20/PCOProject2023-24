@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class HandlerUC01 {
 
-    public void login_pharmaceutical() {
+    public static boolean login_pharmaceutical(Sistema sistema) {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println("Digit your Username and Password:");
@@ -17,10 +17,11 @@ public class HandlerUC01 {
             String username = input.nextLine();
             System.out.print("Password: ");
             String password = input.nextLine();
+            return sistema.login_pharmaceutical(username, password);
         }
     }
 
-    public void login_laboratorie() {
+    public static boolean login_laboratory(Sistema sistema) {
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println("Digit your Username and Password:");
@@ -28,6 +29,7 @@ public class HandlerUC01 {
             String username = input.nextLine();
             System.out.print("Password: ");
             String password = input.nextLine();
+            return sistema.login_laboratory(username, password);
         }
     }
 

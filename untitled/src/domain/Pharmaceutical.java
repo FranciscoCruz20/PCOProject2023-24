@@ -32,4 +32,13 @@ public class Pharmaceutical extends User {
     public void setSurveillance(String surveillance) {
         this.Surveillance = surveillance;
     }
+
+    @Override
+    public String toString() {
+        return "Pharmaceutical{" +
+                "Name='" + Name + '\'' +
+                ", Surveillance='" + Surveillance + '\'' +
+                super.toString() +
+                '}';
+    }
 }

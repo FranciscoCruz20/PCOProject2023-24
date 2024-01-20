@@ -1,5 +1,8 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class FoodInteractions {
     private String Explanation;
     private String Food;
@@ -13,6 +16,50 @@ public class FoodInteractions {
         this.Effect = effect;
         this.Bibliography = bibliography;
         this.Substances = substances;
+    }
+
+    public String getExplanation() {
+        return Explanation;
+    }
+
+    public void setExplanation(String explanation) {
+        Explanation = explanation;
+    }
+
+    public String getFood() {
+        return Food;
+    }
+
+    public void setFood(String food) {
+        Food = food;
+    }
+
+    public String getEffect() {
+        return Effect;
+    }
+
+    public void setEffect(String effect) {
+        Effect = effect;
+    }
+
+    public String getBibliography() {
+        return Bibliography;
+    }
+
+    public void setBibliography(String bibliography) {
+        Bibliography = bibliography;
+    }
+
+    public String getSubstances() {
+        return Substances;
+    }
+
+    public void setSubstances(String substances) {
+        Substances = substances;
+    }
+
+    public ArrayList<String> lista_substances(){
+        return new ArrayList<>(Arrays.asList(this.Substances.split("|")));
     }
 
     @Override

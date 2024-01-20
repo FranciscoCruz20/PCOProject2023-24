@@ -1,5 +1,8 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Drug {
 
     private String Name;
@@ -54,6 +57,10 @@ public class Drug {
 
     public void setSubstances(String substances) {
         Substances = substances;
+    }
+
+    public ArrayList<String> lista_substances(){
+        return new ArrayList<>(Arrays.asList(this.Substances.split("|")));
     }
 
     @Override

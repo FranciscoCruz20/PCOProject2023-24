@@ -42,7 +42,7 @@ public class Laboratories extends User {
     public String toString() {
         return "Laboratories{" +
                 "Name='" + Name + '\'' +
-                ", Surveillance='" + Surveillance + '\'' +
-                '}';
+                ", Surveillance='" + Surveillance + '\'' + super.toString()
+                +  '}';
     }
 }

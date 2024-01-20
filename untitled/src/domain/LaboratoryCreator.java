@@ -2,9 +2,9 @@ package domain;
 
 import java.util.Scanner;
 
-public class LaboratoriesCreator {
+public class LaboratoryCreator {
 
-    public static Laboratories criar_Laboratories() {
+    public static Laboratory criar_Laboratories() {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Insira o username, password e nome da Industria Farmaceutica:");
@@ -17,6 +17,6 @@ public class LaboratoriesCreator {
         System.out.print("Contato da Industria: ");
         String surveillance = input.nextLine();
 
-        return new Laboratories(username, password, name, surveillance);
+        return new Laboratory(username, password, name, surveillance);
     }
 }

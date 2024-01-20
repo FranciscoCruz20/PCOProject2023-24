@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Objects;
+
 public class Substance {
 
     private String Substance;
@@ -25,5 +27,17 @@ public class Substance {
         return "Substance{" +
                 "Substance='" + Substance + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Substance substance)) return false;
+        return Objects.equals(Substance, substance.Substance);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Substance);
     }
 }
