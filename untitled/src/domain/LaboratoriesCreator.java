@@ -17,8 +17,6 @@ public class LaboratoriesCreator {
         System.out.print("Contato da Industria: ");
         String surveillance = input.nextLine();
 
-        Laboratories laboratories = new Laboratories(username,password,name, surveillance);
-
         return new Laboratories(username, password, name, surveillance);
     }
 }

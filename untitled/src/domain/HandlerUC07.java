@@ -15,10 +15,10 @@ public class HandlerUC07 {
         System.out.print("Forma armaceutica: ");
         String form = input.nextLine();
         System.out.print("Dosagem: ");
-        float dosage = Float.parseFloat(input.nextLine());
+        String dosage = input.nextLine();
         System.out.print("Contato de Farmacovigilancia: ");
-        double surveillance = Double.parseDouble(input.nextLine());
-        ArrayList<Substance> list_substances = new ArrayList<>();
+        String laboratory = input.nextLine();
+        String list_substances = "";
         while (true){
             System.out.println("Quer adicionar uma substância ativa?(sim ou nao)");
             String resposta = input.nextLine();
@@ -27,14 +27,14 @@ public class HandlerUC07 {
             }
             System.out.print("Substancia Ativa: ");
             String substance = input.nextLine();
-            for (Substance i: catalogue_substances){
-                if (i.getName().equals(substance)){
-                    list_substances.add(i);
-                }
-            }
-        }
+            list_substances += substance + "|";
 
-        DrugCreator.create_drug(name,form, dosage,surveillance, list_substances);
+        }
+        StringBuilder sb = new StringBuilder(list_substances);
+        sb.deleteCharAt(list_substances.length() - 1);
+        list_substances = sb.toString();
+
+        DrugCreator.create_drug(name,form, dosage,laboratory, list_substances);
 
     }
 }

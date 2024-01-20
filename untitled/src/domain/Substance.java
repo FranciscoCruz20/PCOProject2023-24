@@ -2,21 +2,28 @@ package domain;
 
 public class Substance {
 
-    private String name;
+    private String Substance;
 
     public Substance(String nome) {
-        this.name = name;
+        this.Substance = nome;
     }
 
     /*public static void criar_SubstanciaAtiva(){
         SubstanciaAtivaCreator.criar_SubstanciaAtiva();
     }*/
 
-    public String getName() {
-        return name;
+    public String getSubstance() {
+        return Substance;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSubstance(String substance) {
+        Substance = substance;
+    }
+
+    @Override
+    public String toString() {
+        return "Substance{" +
+                "Substance='" + Substance + '\'' +
+                '}';
     }
 }

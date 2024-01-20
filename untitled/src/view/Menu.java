@@ -3,6 +3,7 @@ package view;
 import domain.Administrator;
 import domain.Sistema;
 import domain.SistemaLoader;
+import domain.Sistemaseeder;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -15,8 +16,10 @@ public class Menu {
     }
 
     public void inical_menu() throws IOException {
+        Sistemaseeder sistemaseeder = new Sistemaseeder(this.sistema.getDrugs(), this.sistema.getSubstances(),
+                this.sistema.getFoodInteractions(), this.sistema.getLaboratories());
+        sistemaseeder.gravar();
         Scanner input = new Scanner(System.in);
-        System.out.println(this.sistema);
         while (true) {
             System.out.println("Welcome new Utent, what you want to do ");
             System.out.println("1 - Login as an Admin");

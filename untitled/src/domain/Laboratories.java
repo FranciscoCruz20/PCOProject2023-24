@@ -12,6 +12,12 @@ public class Laboratories extends User {
         this.Surveillance = surveillance;
     }
 
+    public Laboratories(String name, String surveillance){
+        super("", "");
+        this.Name = name;
+        this.Surveillance = surveillance;
+    }
+
     public void criar_Laboratories(){
         LaboratoriesCreator.criar_Laboratories();
     }
@@ -30,5 +36,13 @@ public class Laboratories extends User {
 
     public void setSurveillance(String surveillance) {
         Surveillance = surveillance;
+    }
+
+    @Override
+    public String toString() {
+        return "Laboratories{" +
+                "Name='" + Name + '\'' +
+                ", Surveillance='" + Surveillance + '\'' +
+                '}';
     }
 }
