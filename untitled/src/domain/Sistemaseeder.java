@@ -27,6 +27,7 @@ public class Sistemaseeder {
             FileWriter writer = new FileWriter("untitled/src/domain/dataset2.json");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(this, writer);
+            writer.close();
         } catch (IOException i){
             i.printStackTrace();
         }

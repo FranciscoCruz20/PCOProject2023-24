@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Pharmaceuticalseeder {
-    private ArrayList<Pharmaceutical> pharmaceutical_user;
+    private ArrayList<Pharmaceutical> pharmaceuticals;
 
     public Pharmaceuticalseeder(ArrayList<Pharmaceutical> pharmaceuticals) {
-        this.pharmaceutical_user = pharmaceuticals;
+        this.pharmaceuticals = pharmaceuticals;
     }
 
     public void gravar(){
@@ -19,6 +19,7 @@ public class Pharmaceuticalseeder {
             FileWriter writer = new FileWriter("untitled/src/domain/pharmaceuticalset.json");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(this, writer);
+            writer.close();
         } catch (IOException i){
             i.printStackTrace();
         }

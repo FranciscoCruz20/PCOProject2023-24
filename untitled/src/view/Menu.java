@@ -105,7 +105,7 @@ public class Menu {
         int opcao = input.nextInt();
         input.nextLine();
         if (opcao == 1) {
-            //Implementar handler2
+            HandlerUC02.register_user(this.sistema);
             }
         if (opcao == 2) {
             //implementar o apagar user
@@ -241,5 +241,16 @@ public class Menu {
         if (option == 6) {
             this.inical_menu();
         }
+    }
+
+    public void sair(){
+        Sistemaseeder sistemaseeder = new Sistemaseeder(sistema.getDrugs(), sistema.getSubstances(),
+                                                        sistema.getFoodInteractions(), sistema.getLaboratories());
+        sistemaseeder.gravar();
+        Laboratoryseeder laboratoryseeder = new Laboratoryseeder(sistema.getLaboratories_user());
+        laboratoryseeder.gravar();
+        Pharmaceuticalseeder pharmaceuticalseeder = new Pharmaceuticalseeder(sistema.getLista_pharmaceuticals());
+        pharmaceuticalseeder.gravar();
+        System.exit(0);
     }
 }

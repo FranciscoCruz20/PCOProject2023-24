@@ -1,16 +1,34 @@
 {
   "laboratories": [
     {
-      "Username": "Tecnimede",
-      "Password": "12345",
       "Name": "Tecnimede",
-      "Surveillance": 800202838
+      "Surveillance": "800202838",
+      "Username": "Tecnimede",
+      "Password": "12345"
     },
     {
-      "Username": "Dermoteca",
-      "Password": "5678",
       "Name": "Dermoteca",
-      "Surveillance": 213804180
+      "Surveillance": "213804180",
+      "Username": "Dermoteca",
+      "Password": "5678"
+    },
+    {
+      "Name": "Krka",
+      "Surveillance": "",
+      "Username": "uhj",
+      "Password": "987"
+    },
+    {
+      "Name": "Alfasigma",
+      "Surveillance": "217226110",
+      "Username": "nma",
+      "Password": "345"
+    },
+    {
+      "Name": "Astellas",
+      "Surveillance": "214401300",
+      "Username": "qwe",
+      "Password": "vvd"
     }
-    ]
+  ]
 }

@@ -9,10 +9,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Laboratoryseeder {
-    private ArrayList<Laboratory> laboratories_user;
+    private ArrayList<Laboratory> laboratories;
 
     public Laboratoryseeder(ArrayList<Laboratory> laboratories) {
-        this.laboratories_user = laboratories;
+        this.laboratories = laboratories;
     }
 
     public void gravar(){
@@ -20,6 +20,7 @@ public class Laboratoryseeder {
             FileWriter writer = new FileWriter("untitled/src/domain/laboratorieset.json");
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(this, writer);
+            writer.close();
         } catch (IOException i){
             i.printStackTrace();
         }

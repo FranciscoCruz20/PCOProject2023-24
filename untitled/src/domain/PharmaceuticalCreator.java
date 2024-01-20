@@ -1,10 +1,10 @@
 package domain;
-import java.io.FileNotFoundException;
+
 import java.util.Scanner;
 
 public class PharmaceuticalCreator {
 
-    public static Pharmaceutical create_Pharmaceutical() throws FileNotFoundException{
+    public static Pharmaceutical create_Pharmaceutical(){
 
         Scanner input = new Scanner(System.in);
 
@@ -17,8 +17,6 @@ public class PharmaceuticalCreator {
         String name = input.nextLine();
         System.out.print("Contato do Farmaceutico: ");
         String surveillance = input.nextLine();
-
-        Pharmaceutical pharmaceutical = new Pharmaceutical(username,password,name, surveillance);
 
         return new Pharmaceutical(username, password, name, surveillance);
     }
