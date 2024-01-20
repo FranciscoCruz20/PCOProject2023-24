@@ -1,25 +1,25 @@
 package domain;
 
-public class Laboratories extends User {
+public class Laboratory extends User {
 
     private String Name;
     private String Surveillance;
 
 
-    public Laboratories(String username, String password, String name, String surveillance) {
+    public Laboratory(String username, String password, String name, String surveillance) {
         super(username, password);
         this.Name = name;
         this.Surveillance = surveillance;
     }
 
-    public Laboratories(String name, String surveillance){
+    public Laboratory(String name, String surveillance){
         super("", "");
         this.Name = name;
         this.Surveillance = surveillance;
     }
 
     public void criar_Laboratories(){
-        LaboratoriesCreator.criar_Laboratories();
+        LaboratoryCreator.criar_Laboratories();
     }
 
     public String getName() {

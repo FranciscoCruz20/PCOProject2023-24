@@ -8,4 +8,7 @@ package domain;
  * Só o Administrador pode chamar estes métodos
  */
 public class HandlerUC02 {
+
+
+
 }

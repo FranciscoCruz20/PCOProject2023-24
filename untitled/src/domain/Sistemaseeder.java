@@ -11,11 +11,11 @@ public class Sistemaseeder {
     private ArrayList<Drug> drugs;
     private ArrayList<Substance> substances;
     private ArrayList<FoodInteractions> foodInteractions;
-    private ArrayList<Laboratories> laboratories;
+    private ArrayList<Laboratory> laboratories;
 
     public Sistemaseeder(ArrayList<Drug> drugs, ArrayList<Substance> substances,
                          ArrayList<FoodInteractions> foodInteractions,
-                         ArrayList<Laboratories> laboratories) {
+                         ArrayList<Laboratory> laboratories) {
         this.drugs = drugs;
         this.substances = substances;
         this.foodInteractions = foodInteractions;

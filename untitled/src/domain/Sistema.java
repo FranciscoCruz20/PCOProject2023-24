@@ -9,12 +9,12 @@ public class Sistema {
     private HashMap<String, ArrayList<FoodInteractions>> dic_foodInteractions;
     private ArrayList<FoodInteractions> foodInteractions;
     private ArrayList<Pharmaceutical> lista_pharmaceuticals;
-    private ArrayList<Laboratories> laboratories;
+    private ArrayList<Laboratory> laboratories;
     private Administrator administrator;
 
     public Sistema(ArrayList<Drug> drugs, ArrayList<Substance> substances, ArrayList<FoodInteractions> foodInteractions,
                    ArrayList<Pharmaceutical> lista_pharmaceuticals,
-                   ArrayList<Laboratories> laboratories, Administrator administrator) {
+                   ArrayList<Laboratory> laboratories, Administrator administrator) {
         this.drugs = drugs;
         this.substances = substances;
         this.foodInteractions = foodInteractions;
@@ -22,7 +22,7 @@ public class Sistema {
         this.laboratories = laboratories;
         this.administrator = administrator;
         this.dic_foodInteractions = new HashMap<>();
-        this.laboratories_user = new ArrayList<>();
+        this.laboratories = new ArrayList<>();
     }
 
     public Sistema() {
@@ -36,11 +36,11 @@ public class Sistema {
     }
 
     public ArrayList<Laboratory> getLaboratories_user() {
-        return laboratories_user;
+        return laboratories;
     }
 
     public void setLaboratories_user(ArrayList<Laboratory> laboratories_user) {
-        this.laboratories_user = laboratories_user;
+        this.laboratories = laboratories_user;
     }
 
     public ArrayList<Drug> getDrugs() {
@@ -83,11 +83,11 @@ public class Sistema {
         this.lista_pharmaceuticals = lista_pharmaceuticals;
     }
 
-    public ArrayList<Laboratories> getLaboratories() {
+    public ArrayList<Laboratory> getLaboratories() {
         return laboratories;
     }
 
-    public void setLaboratories(ArrayList<Laboratories> laboratories) {
+    public void setLaboratories(ArrayList<Laboratory> laboratories) {
         this.laboratories = laboratories;
     }
 
@@ -100,7 +100,7 @@ public class Sistema {
     }
 
     public boolean login_laboratory(String username, String password){
-        for (Laboratory laboratory_user: this.laboratories_user){
+        for (Laboratory laboratory_user: this.laboratories){
             if (laboratory_user.getUsername().equals(username) && laboratory_user.getPassword().equals(password)){
                 return true;
             }
@@ -162,7 +162,7 @@ public class Sistema {
                 ", dic_foodInteractions=" + dic_foodInteractions +
                 ", foodInteractions=" + foodInteractions +
                 ", lista_pharmaceuticals=" + lista_pharmaceuticals +
-                ", laboratories_user=" + laboratories_user +
+                ", laboratories_user=" + laboratories +
                 ", laboratories=" + laboratories +
                 ", administrator=" + administrator +
                 '}';
