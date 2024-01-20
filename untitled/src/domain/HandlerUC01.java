@@ -9,6 +9,11 @@ import java.util.Scanner;
  */
 public class HandlerUC01 {
 
+    /**
+     * Método responsável pelo login do utilizador do tipo farmaceutico
+     * @param sistema
+     * @return
+     */
     public static boolean login_pharmaceutical(Sistema sistema) {
         Scanner input = new Scanner(System.in);
         while (true) {
@@ -21,6 +26,11 @@ public class HandlerUC01 {
         }
     }
 
+    /**
+     * Método responsável pelo login do utilizador do tipo Industria Farmaceutica
+     * @param sistema
+     * @return
+     */
     public static boolean login_laboratory(Sistema sistema) {
         Scanner input = new Scanner(System.in);
         while (true) {

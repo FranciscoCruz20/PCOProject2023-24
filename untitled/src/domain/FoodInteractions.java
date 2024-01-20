@@ -3,6 +3,9 @@ package domain;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ *
+ */
 public class FoodInteractions {
     private String Explanation;
     private String Food;

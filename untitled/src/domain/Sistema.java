@@ -133,7 +133,6 @@ public class Sistema {
         return FoodInteractions;
     }
 
-
     public void dic_transform(){
         for (FoodInteractions foodInteraction: this.foodInteractions){
             ArrayList<String> substances_names = foodInteraction.lista_substances();
