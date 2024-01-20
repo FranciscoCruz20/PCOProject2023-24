@@ -21,6 +21,7 @@ public class Menu {
             System.out.println("1 - Login as an Admin");
             System.out.println("2 - Login as an User");
             System.out.println("3 - Search drugs");
+            System.out.println("4 - Search Surveillance");
 
             int option = input.nextInt();
             input.nextLine();
@@ -33,6 +34,9 @@ public class Menu {
             }
             if (option == 3) {
                 // Implementar a pesquisa de medicamentos
+            }
+            if (option == 4) {
+                //lista os contatos
             }
             else {
                 System.out.println("Invalid option");
@@ -58,17 +62,27 @@ public class Menu {
                     System.out.println("Administrator Menu:");
                     System.out.println("1 - Manage Users");
                     System.out.println("2 - Manage Substances");
-                    System.out.println("3 - Exit");
+                    System.out.println("3 - Search Drugs");
+                    System.out.println("4 - Search Surveillance");
+                    System.out.println("5 - Exit");
 
                     int option = input.nextInt();
                     input.nextLine();
 
                     if (option == 1) {
-
+                        this.user_manage_menu();
                     }
                     if (option == 2) {
+                        this.substance_manage_menu();
+                    }
 
-                    } else if (option == 3) {
+                    if (option == 3) {
+                        //lista as droguinhas
+                    }
+                    if (option == 4) {
+                        //lista os contatos
+                    }
+                    if (option == 5) {
                         this.inical_menu();
 
                     } else {
@@ -80,6 +94,57 @@ public class Menu {
             }
         }
     }
+
+    public void user_manage_menu() throws IOException {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Users manage Menu:");
+        System.out.println("1- Create user");
+        System.out.println("2- Delete user");
+        System.out.println("3- Exit");
+        int opcao = input.nextInt();
+        input.nextLine();
+        if (opcao == 1) {
+            //Implementar handler2
+            }
+        if (opcao == 2) {
+            //implementar o apagar user
+        }
+        if (opcao == 3) {
+            this.menu_admin();
+        }
+        else{
+            System.out.println("Invalid option");
+        }
+    }
+
+    public void substance_manage_menu() throws IOException {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Substance manage Menu:");
+        System.out.println("1- Create substance");
+        System.out.println("2- Delete substance");
+        System.out.println("3 - Search Substance");
+        System.out.println("4 - Exit");
+        int opcao = input.nextInt();
+        input.nextLine();
+        if (opcao == 1) {
+            //Implementar handler 3
+        }
+        if (opcao == 2) {
+            //implementar o apagar substancia
+        }
+        if (opcao == 3) {
+            //implementar a pesquisa das substancias
+        }
+        if (opcao == 4) {
+            this.menu_admin();
+        }
+        else{
+            System.out.println("Invalid option");
+        }
+    }
+
 
     public void menu_confirm_user() throws IOException {
 
@@ -94,7 +159,7 @@ public class Menu {
         if (opcao == 1) {
             while (true) {
                 if (HandlerUC01.login_pharmaceutical(this.sistema)){
-                    this.Phamaceutical_menu();
+                    this.pharmaceutical_menu();
                 }
                 else{
                     System.out.println("Username or Password incorrect");
@@ -104,7 +169,7 @@ public class Menu {
         else if (opcao == 2) {
             while (true) {
                 if (HandlerUC01.login_laboratory(this.sistema)){
-                    this.Laboratory_menu();
+                    this.laboratory_menu();
                 }
                 else {
                     System.out.println("Username or Password incorrect");
@@ -116,40 +181,64 @@ public class Menu {
         }
     }
 
-    public void Phamaceutical_menu() throws IOException {
+    public void pharmaceutical_menu() throws IOException {
         Scanner input = new Scanner(System.in);
         System.out.println("Phamaceutical Menu:");
-        System.out.println("1 - Manage your food interactions");
+        System.out.println("1 - Delete your food interactions");
         System.out.println("2 - Create food interaction");
-        System.out.println("3 - Exit");
-        int opcao = input.nextInt();
+        System.out.println("3 - Search drugs");
+        System.out.println("4 - Search Surveillance");
+        System.out.println("5 - Search your food interactions");
+        System.out.println("6- Exit");
+        int option = input.nextInt();
         input.nextLine();
-        if (opcao == 1) {
-            //Implementar a pesquisa das interações que fizeram
+        if (option == 1) {
+            //Implementar o apagar das interações que fizeram
         }
-        if (opcao == 2) {
-
+        if (option == 2) {
+            // implementar a criação
         }
-        if (opcao == 3) {
+        if (option == 3) {
+            // metem o nome e dá a informação
+        }
+        if (option == 4) {
+            // metem o nome e dá a informação
+        }
+        if (option == 5) {
+            // lista os 10 primeiros dele
+        }
+        if (option == 6) {
             this.inical_menu();
         }
     }
 
-    public void Laboratory_menu() throws IOException {
+    public void laboratory_menu() throws IOException {
         Scanner input = new Scanner(System.in);
         System.out.println("Laboratorie Menu:");
-        System.out.println("1- Manage your drugs");
-        System.out.println("2- Search substances");
-        System.out.println("3- Exit");
-        int opcao = input.nextInt();
+        System.out.println("1 - Create drugs");
+        System.out.println("2 - Delete drugs");
+        System.out.println("3 - Search drugs");
+        System.out.println("4 - Search Surveillance");
+        System.out.println("5 - Search your drugs");
+        System.out.println("6- Exit");
+        int option = input.nextInt();
         input.nextLine();
-        if (opcao == 1) {
-
+        if (option == 1) {
+            //criar medicamento
         }
-        if (opcao == 2) {
-
+        if (option == 2) {
+            // apagar medicamento
         }
-        if (opcao == 3) {
+        if (option == 3) {
+            //mete o nome e dá a informação
+        }
+        if (option == 4) {
+            //mete o nome e dá a informação
+        }
+        if (option == 5) {
+            //lista os 10 primeiros dele
+        }
+        if (option == 6) {
             this.inical_menu();
         }
     }
