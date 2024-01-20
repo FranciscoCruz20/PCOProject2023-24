@@ -1,9 +1,6 @@
 package view;
 
-import domain.Administrator;
-import domain.Sistema;
-import domain.SistemaLoader;
-import domain.Sistemaseeder;
+import domain.*;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -16,9 +13,6 @@ public class Menu {
     }
 
     public void inical_menu() throws IOException {
-        Sistemaseeder sistemaseeder = new Sistemaseeder(this.sistema.getDrugs(), this.sistema.getSubstances(),
-                this.sistema.getFoodInteractions(), this.sistema.getLaboratories());
-        sistemaseeder.gravar();
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println("Welcome new Utent, what you want to do ");
@@ -44,9 +38,10 @@ public class Menu {
         }
     }
 
+
     public void menu_admin() throws IOException {
 
-        Administrator administrator = new Administrator();
+        Administrator administrator = AdministradorCreator.create_Administrator();
         Scanner input = new Scanner(System.in);
 
         while (true) {
@@ -156,5 +151,12 @@ public class Menu {
         if (opcao == 3) {
             this.inical_menu();
         }
+    }
+
+    public void sair() {
+        Sistemaseeder sistemaseeder = new Sistemaseeder(this.sistema.getDrugs(), this.sistema.getSubstances(),
+                this.sistema.getFoodInteractions(), this.sistema.getLaboratories());
+        sistemaseeder.gravar();
+        System.exit(0);
     }
 }
