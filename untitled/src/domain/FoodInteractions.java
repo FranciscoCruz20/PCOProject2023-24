@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 /**
- *
+ *Classe representativa das food interactions
  */
 public class FoodInteractions {
     private String Explanation;
@@ -14,6 +14,14 @@ public class FoodInteractions {
     private String Bibliography;
     private String Substances;
 
+    /**
+     * Construtor
+     * @param explanation
+     * @param food
+     * @param effect
+     * @param bibliography
+     * @param substances
+     */
     public FoodInteractions(String explanation, String food, String effect, String bibliography, String substances) {
         this.Explanation = explanation;
         this.Food = food;
@@ -94,14 +102,26 @@ public class FoodInteractions {
         return Substances;
     }
 
+    /**
+     *
+     * @param substances
+     */
     public void setSubstances(String substances) {
         Substances = substances;
     }
 
+    /**
+     *
+     * @return lista substances
+     */
     public ArrayList<String> lista_substances(){
         return new ArrayList<>(Arrays.asList(this.Substances.split("\\|")));
     }
 
+    /**
+     *
+     * @return explanation, food, effect, bibliography e substances
+     */
     @Override
     public String toString() {
         return "FoodInteractions{" +
@@ -113,6 +133,11 @@ public class FoodInteractions {
                 '}';
     }
 
+    /**
+     * Método que vê a igualdade entre atributos
+     * @param o
+     * @return true para igual e false para o contrário
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -122,6 +147,10 @@ public class FoodInteractions {
                 Objects.equals(Substances, that.Substances);
     }
 
+    /**
+     *
+     * @return o código hash para o projeto
+     */
     @Override
     public int hashCode() {
         return Objects.hash(Explanation, Food, Effect, Bibliography, Substances);

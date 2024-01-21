@@ -8,6 +8,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Classe responsável pela escriva no set de laboratory
+ */
 public class Laboratoryseeder {
     private ArrayList<Laboratory> laboratories;
 
@@ -15,6 +18,9 @@ public class Laboratoryseeder {
         this.laboratories = laboratories;
     }
 
+    /**
+     * Método responsável pela escrita no set de laboratory
+     */
     public void gravar(){
         try{
             FileWriter writer = new FileWriter("untitled/src/domain/laboratorieset.json");

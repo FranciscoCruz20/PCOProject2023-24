@@ -2,7 +2,18 @@ package domain;
 
 import java.util.Scanner;
 
+/**
+ * Classe responsável pela execução do caso de uso 10
+ * Onde é necessário fazer a pesquisa de surveilance
+ */
 public class HandlerUC10 {
+
+    /**
+     * Método responsável pela pesquisa de surveillance
+     * Onde é dado como input o nome da drug é dado o surveillance associado a ela
+     * @param sistema
+     * @throws NullPointerException
+     */
     public static void search_surveillance(Sistema sistema) throws NullPointerException{
         Scanner input = new Scanner(System.in);
         String drug_name = "";

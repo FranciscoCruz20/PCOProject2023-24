@@ -1,7 +1,7 @@
 package domain;
 
 /**
- * Classe representativa do Administrador  da aplicação
+ * Classe representativa do Administrator  da aplicação
  */
 public class Administrator {
 
@@ -20,7 +20,7 @@ public class Administrator {
     }
 
     /**
-     * Método de login do Administrador no sistema
+     * Método de login do Administrator no sistema
      * @param username
      * @param password
      * @return resultado boolean da verificação de login

@@ -4,9 +4,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ *Classe responsável pela execução do caso de uso 9
+ * Onde é necessário fazer pesquisa de foodIntreractions
+ */
 public class HandlerUC09 {
 
-    public static void pesquisar_Interacao_Alimentar (Sistema sistema){
+    /**
+     * Método responsável pela pesquisa de foodInteractions
+     * Input do nome de uma drug, em seguida lista as substances, efeitos e foods associados a essa mesma drug
+     * É possível ver mais detalhes, selecionando uma linha da lista de informações e assim é disponibilizada a restante informação sobre a foodInteraction
+     * @param sistema
+     */
+    public static void search_drug (Sistema sistema){
         Scanner input = new Scanner(System.in);
         System.out.println("Whats the name of the drug you want to search?");
         String name = input.nextLine();
@@ -60,7 +70,7 @@ public class HandlerUC09 {
             }
         }
         else {
-            HandlerUC09.pesquisar_Interacao_Alimentar(sistema);
+            HandlerUC09.search_drug(sistema);
         }
     }
 }

@@ -2,8 +2,16 @@ package domain;
 
 import java.util.Scanner;
 
+/**
+ * Classe responsável pela execução do caso de uso 7
+ * Onde é necessário criar uma drug
+ */
 public class HandlerUC07 {
 
+    /**
+     * Método responsável por cirar a drug, chamando o seu creator posteriormente
+     * @param sistema
+     */
     public static void create_Drug(Sistema sistema){
 
         Scanner input = new Scanner(System.in);

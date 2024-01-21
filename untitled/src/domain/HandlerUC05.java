@@ -2,8 +2,16 @@ package domain;
 
 import java.util.Scanner;
 
+/**
+ * Classe responsável pela execução do caso de uso 5
+ * Onde é necesário criar uma foodInteraction
+ */
 public class HandlerUC05 {
 
+    /**
+     * Método que cria uma foodInteraction
+     * @param sistema
+     */
     public static void create_foodInteractions(Sistema sistema){
         Scanner input = new Scanner(System.in);
 

@@ -1,12 +1,20 @@
 package domain;
 
-import java.io.FileNotFoundException;
-
+/**
+ * Classe representativa de um pharmaceutical
+ */
 public class Pharmaceutical extends User {
 
     private String Name;
     private String Surveillance;
 
+    /**
+     * Construtor
+     * @param username
+     * @param password
+     * @param name
+     * @param surveillance
+     */
     public Pharmaceutical(String username, String password, String name, String surveillance) {
         super(username, password);
         this.Name = name;

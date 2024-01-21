@@ -12,7 +12,7 @@ public class HandlerUC01 {
     /**
      * Método responsável pelo login do utilizador do tipo farmaceutico
      * @param sistema
-     * @return
+     * @return true se for bem sucedido, false caso contrário
      */
     public static boolean login_pharmaceutical(Sistema sistema) {
         Scanner input = new Scanner(System.in);
@@ -27,7 +27,7 @@ public class HandlerUC01 {
     /**
      * Método responsável pelo login do utilizador do tipo Industria Farmaceutica
      * @param sistema
-     * @return
+     * @return true se for bem sucedido, false caso contrário
      */
     public static boolean login_laboratory(Sistema sistema) {
         Scanner input = new Scanner(System.in);

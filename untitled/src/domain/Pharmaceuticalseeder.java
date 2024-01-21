@@ -7,6 +7,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Classe seeder de Pharmaceutical
+ * Escreve no set de Pharamceutical
+ */
 public class Pharmaceuticalseeder {
     private ArrayList<Pharmaceutical> pharmaceuticals;
 
@@ -14,6 +18,9 @@ public class Pharmaceuticalseeder {
         this.pharmaceuticals = pharmaceuticals;
     }
 
+    /**
+     * Método responsável pela escrita no set de Pharmaceutical
+     */
     public void gravar(){
         try{
             FileWriter writer = new FileWriter("untitled/src/domain/pharmaceuticalset.json");

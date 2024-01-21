@@ -6,9 +6,16 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
+/**
+ * Classe Menu que representa a interface da aplicação, onde o utilizador pode aceder a todos os métodos disponíveis
+ */
 public class Menu {
     Sistema sistema;
 
+    /**
+     * Construtor
+     */
     public Menu(){
         this.sistema = SistemaLoader.create_System();
         sistema.dic_transform();
@@ -16,6 +23,10 @@ public class Menu {
         Laboratoryloader.create_Laboratory_users(this.sistema);
     }
 
+    /**
+     * Menu incial
+     * @throws IOException
+     */
     public void inical_menu() throws IOException {
         Scanner input = new Scanner(System.in);
         while (true) {
@@ -55,6 +66,10 @@ public class Menu {
         }
     }
 
+    /**
+     * Menu de administrador
+     * @throws IOException
+     */
     public void menu_admin() throws IOException {
 
         Administrator administrator = new Administrator();
@@ -117,6 +132,10 @@ public class Menu {
         }
     }
 
+    /**
+     * Menu de gestão dos utilizadores
+     * @throws IOException
+     */
     public void user_manage_menu() throws IOException {
 
         Scanner input = new Scanner(System.in);
@@ -149,6 +168,10 @@ public class Menu {
         }
     }
 
+    /**
+     * Menu de gestão das substÂncias ativas
+     * @throws IOException
+     */
     public void substance_manage_menu() throws IOException {
 
         Scanner input = new Scanner(System.in);
@@ -182,6 +205,10 @@ public class Menu {
     }
 
 
+    /**
+     * Menu onde o utilizador escolhe a sua role para efetuar o login
+     * @throws IOException
+     */
     public void menu_confirm_user() throws IOException {
 
         Scanner input = new Scanner(System.in);
@@ -213,7 +240,7 @@ public class Menu {
                 }
             }
         }
-        else if (opcao == 2) {
+        else if (option == 2) {
             while (true) {
                 if (HandlerUC01.login_laboratory(this.sistema)){
                     this.laboratory_menu();
@@ -226,7 +253,7 @@ public class Menu {
                 }
             }
         }
-        else if (opcao == 3) {
+        else if (option == 3) {
             this.inical_menu();
         }
         else if (option == 4) {
@@ -238,6 +265,11 @@ public class Menu {
         }
     }
 
+
+    /**
+     * Menu de farmaceutico
+     * @throws IOException
+     */
     public void pharmaceutical_menu() throws IOException {
         Scanner input = new Scanner(System.in);
         System.out.println("Phamaceutical Menu:");
@@ -279,6 +311,11 @@ public class Menu {
         }
     }
 
+
+    /**
+     * Menu de Industria Framaceutica
+     * @throws IOException
+     */
     public void laboratory_menu() throws IOException {
         Scanner input = new Scanner(System.in);
         System.out.println("Laboratory Menu:");
@@ -320,6 +357,9 @@ public class Menu {
         }
     }
 
+    /**
+     * Método que fecha o sistema e grava as informações nos sets
+     */
     public void exit(){
         System.out.println("\nGoing to sleep\n");
         Sistemaseeder sistemaseeder = new Sistemaseeder(sistema.getDrugs(), sistema.getSubstances(),

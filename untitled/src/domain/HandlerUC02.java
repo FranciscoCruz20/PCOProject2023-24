@@ -11,6 +11,11 @@ import java.util.Scanner;
  */
 public class HandlerUC02 {
 
+    /**
+     * Método que registra um utilizador
+     * Divide-se chamando dois métodos diferentes, dependendo da role escolhida
+     * @param sistema
+     */
     public static void register_user(Sistema sistema){
         Scanner input = new Scanner(System.in);
         while (true) {
@@ -33,11 +38,19 @@ public class HandlerUC02 {
         }
     }
 
+    /**
+     * Método de registro caso seja escolhida a role de pharmaceutical
+     * @param sistema
+     */
     public static void register_pharmaceutical(Sistema sistema){
         Pharmaceutical pharmaceutical = PharmaceuticalCreator.create_Pharmaceutical();
         sistema.add_pharmaceutical(pharmaceutical);
     }
 
+    /**
+     * Método de registro caso seja escolhida a role de laboratory
+     * @param sistema
+     */
     public static void register_laboratory(Sistema sistema){
         Scanner input = new Scanner(System.in);
         System.out.println("Whats the name of the laboratory you wish to register:");

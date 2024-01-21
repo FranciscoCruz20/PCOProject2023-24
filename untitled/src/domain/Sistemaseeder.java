@@ -7,12 +7,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
+/**
+ * Classe seeder do Sistema
+ */
 public class Sistemaseeder {
     private ArrayList<Drug> drugs;
     private ArrayList<Substance> substances;
     private ArrayList<FoodInteractions> foodInteractions;
     private ArrayList<Laboratory> laboratories;
 
+    /**
+     * Construtor
+     * @param drugs
+     * @param substances
+     * @param foodInteractions
+     * @param laboratories
+     */
     public Sistemaseeder(ArrayList<Drug> drugs, ArrayList<Substance> substances,
                          ArrayList<FoodInteractions> foodInteractions,
                          ArrayList<Laboratory> laboratories) {
@@ -22,6 +33,9 @@ public class Sistemaseeder {
         this.laboratories = laboratories;
     }
 
+    /**
+     * Método responsável por escrever no dataset duplicado
+     */
     public void gravar(){
         try{
             FileWriter writer = new FileWriter("untitled/src/domain/dataset2.json");

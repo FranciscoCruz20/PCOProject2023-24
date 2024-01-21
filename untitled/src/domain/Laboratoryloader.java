@@ -6,6 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Classe responsável por dar load dos user de tipo laboratory
+ */
 public class Laboratoryloader {
 
     private ArrayList<Laboratory> laboratories;
@@ -26,6 +29,10 @@ public class Laboratoryloader {
         this.laboratories = laboratories_user;
     }
 
+    /**
+     * Método que lê o set de users do tipo laboratory
+     * @param sistema
+     */
     public static void create_Laboratory_users (Sistema sistema){
         try {
             FileReader reader = new FileReader("untitled/src/domain/laboratorieset.json");

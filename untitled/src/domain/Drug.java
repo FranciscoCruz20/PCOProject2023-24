@@ -134,6 +134,11 @@ public class Drug {
                 '}';
     }
 
+    /**
+     * Método que verifica a igualdade entre os atributos
+     * @param o
+     * @return true caso sejam iguais os atributos e false caso contrário
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -143,6 +148,9 @@ public class Drug {
                 Objects.equals(Substances, drug.Substances);
     }
 
+    /**
+     * @return o código hash para o projeto
+     */
     @Override
     public int hashCode() {
         return Objects.hash(Name, Form, Dosage, Laboratory, Substances);
