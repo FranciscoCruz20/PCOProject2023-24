@@ -18,6 +18,10 @@ public class Laboratoryloader {
         return laboratories;
     }
 
+    /**
+     *
+     * @param laboratories_user
+     */
     public void setLaboratories_user(ArrayList<Laboratory> laboratories_user) {
         this.laboratories = laboratories_user;
     }

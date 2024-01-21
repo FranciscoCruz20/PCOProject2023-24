@@ -60,6 +60,7 @@ public class HandlerUC02 {
             String answer = input.nextLine();
             if (answer.equalsIgnoreCase("y")){
                 Laboratory laboratory1 = LaboratoryCreator.criar_Laboratories();
+                System.out.println("Laboratory Registered and created");
                 sistema.add_laboratory(laboratory1);
                 sistema.add_laboratory_user(laboratory1);
             }

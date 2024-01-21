@@ -1,16 +1,16 @@
 {
   "pharmaceuticals": [
     {
-      "Username": "Joao",
-      "Password": "12345",
       "Name": "Joao",
-      "Surveillance": 999888777
+      "Surveillance": "999888777",
+      "Username": "Joao",
+      "Password": "12345"
     },
     {
-      "Username": "Francisco",
-      "Password": "5678",
       "Name": "Francisco",
-      "Surveillance": 666333222
+      "Surveillance": "666333222",
+      "Username": "Francisco",
+      "Password": "5678"
     }
   ]
 }

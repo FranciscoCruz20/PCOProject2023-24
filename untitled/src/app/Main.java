@@ -10,6 +10,12 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Utente utent = new Utente();
         Menu menu = new Menu();
-        menu.inical_menu();
+        try {
+            menu.inical_menu();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            menu.exit();
+        }
     }
 }

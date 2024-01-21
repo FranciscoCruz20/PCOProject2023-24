@@ -21,7 +21,7 @@ public class HandlerUC07 {
         while (true){
             System.out.println("Quer adicionar uma substância ativa?(sim ou nao)");
             String resposta = input.nextLine();
-            if (resposta.equals("nao")){
+            if (resposta.equalsIgnoreCase("nao")){
                 break;
             }
             System.out.print("Substancia Ativa: ");
@@ -40,10 +40,11 @@ public class HandlerUC07 {
             list_substances += substance + "|";
 
         }
-        StringBuilder sb = new StringBuilder(list_substances);
-        sb.deleteCharAt(list_substances.length() - 1);
-        list_substances = sb.toString();
-
+        if (!list_substances.equals("")){
+            StringBuilder sb = new StringBuilder(list_substances);
+            sb.deleteCharAt(list_substances.length() - 1);
+            list_substances = sb.toString();
+        }
         System.out.println("Pretende criar com os dados inseridos?(yes/cancelar)");
         String opcao = input.nextLine();
         if (opcao.equals("yes")) {

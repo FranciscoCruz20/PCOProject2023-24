@@ -22,38 +22,74 @@ public class FoodInteractions {
         this.Substances = substances;
     }
 
+    /**
+     *
+     * @return explanation
+     */
     public String getExplanation() {
         return Explanation;
     }
 
+    /**
+     *
+     * @param explanation
+     */
     public void setExplanation(String explanation) {
         Explanation = explanation;
     }
 
+    /**
+     *
+     * @return food
+     */
     public String getFood() {
         return Food;
     }
 
+    /**
+     *
+     * @param food
+     */
     public void setFood(String food) {
         Food = food;
     }
 
+    /**
+     *
+     * @return effect
+     */
     public String getEffect() {
         return Effect;
     }
 
+    /**
+     *
+     * @param effect
+     */
     public void setEffect(String effect) {
         Effect = effect;
     }
 
+    /**
+     *
+     * @return bibliography
+     */
     public String getBibliography() {
         return Bibliography;
     }
 
+    /**
+     *
+     * @param bibliography
+     */
     public void setBibliography(String bibliography) {
         Bibliography = bibliography;
     }
 
+    /**
+     *
+     * @return substances
+     */
     public String getSubstances() {
         return Substances;
     }

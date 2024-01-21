@@ -3,6 +3,7 @@ package view;
 import domain.*;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -23,21 +24,30 @@ public class Menu {
             System.out.println("2 - Login as an User");
             System.out.println("3 - Search drugs");
             System.out.println("4 - Search Surveillance");
-
-            int option = input.nextInt();
-            input.nextLine();
-
+            System.out.println("5 - Exit");
+            System.out.print("Answer: ");
+            int option = 0;
+            try {
+                option = input.nextInt();
+            }
+            catch (InputMismatchException e){
+                System.out.println("Invalid Option");
+                this.inical_menu();
+            }
             if (option == 1) {
                 this.menu_admin();
             }
-            if (option == 2) {
+            else if (option == 2) {
                 this.menu_confirm_user();
             }
-            if (option == 3) {
-                HandlerUC09.pesquisar_Interacao_Alimentar(sistema);
+            else if (option == 3) {
+                HandlerUC09.search_foodInteraction(sistema);
             }
-            if (option == 4) {
+            else if (option == 4) {
                 HandlerUC10.search_surveillance(sistema);
+            }
+            else if (option == 5) {
+                this.exit();
             }
             else {
                 System.out.println("Invalid option");
@@ -65,33 +75,44 @@ public class Menu {
                     System.out.println("2 - Manage Substances");
                     System.out.println("3 - Search Drugs");
                     System.out.println("4 - Search Surveillance");
-                    System.out.println("5 - Exit");
-
+                    System.out.println("5 - Go Back");
+                    System.out.println("6 - Exit");
+                    System.out.print("Answer: ");
                     int option = input.nextInt();
                     input.nextLine();
 
                     if (option == 1) {
                         this.user_manage_menu();
                     }
-                    if (option == 2) {
+                    else if (option == 2) {
                         this.substance_manage_menu();
                     }
 
-                    if (option == 3) {
-                        HandlerUC09.pesquisar_Interacao_Alimentar(sistema);
+                    else if (option == 3) {
+                        HandlerUC09.search_foodInteraction(sistema);
                     }
-                    if (option == 4) {
+                    else if (option == 4) {
                         HandlerUC10.search_surveillance(sistema);
                     }
-                    if (option == 5) {
+                    else if (option == 5) {
                         this.inical_menu();
 
-                    } else {
+                    }
+                    else if (option == 6){
+                        this.exit();
+                    }
+                    else {
                         System.out.println("Invalid option");
                     }
                 }
             } else {
                 System.out.println("Invalid Username or Password");
+                if (!HandlerUC01.try_again(sistema)){
+                    this.inical_menu();
+                }
+                else {
+                    this.menu_admin();
+                }
             }
         }
     }
@@ -102,20 +123,34 @@ public class Menu {
         System.out.println("Users manage Menu:");
         System.out.println("1- Create user");
         System.out.println("2- Delete user");
-        System.out.println("3- Exit");
-        int opcao = input.nextInt();
-        input.nextLine();
-        if (opcao == 1) {
-            HandlerUC02.register_user(this.sistema);
-            }
-        if (opcao == 2) {
-            //implementar o apagar user
+        System.out.println("3- Go Back");
+        System.out.println("4 - Exit");
+        System.out.print("Answer: ");
+        int option = 0;
+        try {
+            option = input.nextInt();
         }
-        if (opcao == 3) {
+        catch (InputMismatchException e){
+            System.out.println("Invalid Option");
+            this.user_manage_menu();
+        }
+        if (option == 1) {
+            HandlerUC02.register_user(this.sistema);
+            this.user_manage_menu();
+            }
+        else if (option == 2) {
+            //implementar o apagar user
+            this.user_manage_menu();
+        }
+        else if (option == 3) {
             this.menu_admin();
+        }
+        else if (option == 4) {
+            this.exit();
         }
         else{
             System.out.println("Invalid option");
+            this.user_manage_menu();
         }
     }
 
@@ -126,23 +161,38 @@ public class Menu {
         System.out.println("1- Create substance");
         System.out.println("2- Delete substance");
         System.out.println("3 - Search Substance");
-        System.out.println("4 - Exit");
-        int opcao = input.nextInt();
-        input.nextLine();
-        if (opcao == 1) {
+        System.out.println("4 - Go Back");
+        System.out.println("5 - Exit");
+        System.out.print("Answer: ");
+        int option = 0;
+        try {
+            option = input.nextInt();
+        }
+        catch (InputMismatchException e){
+            System.out.println("Invalid Option");
+            this.substance_manage_menu();
+        }
+        if (option == 1) {
             HandlerUC03.create_Substance(sistema);
+            this.substance_manage_menu();
         }
-        if (opcao == 2) {
+        else if (option == 2) {
             //implementar o apagar substancia
+            this.substance_manage_menu();
         }
-        if (opcao == 3) {
+        else if (option == 3) {
             //implementar a pesquisa das substancias
+            this.substance_manage_menu();
         }
-        if (opcao == 4) {
+        else if (option == 4) {
             this.menu_admin();
+        }
+        else if (option == 5) {
+            this.exit();
         }
         else{
             System.out.println("Invalid option");
+            this.substance_manage_menu();
         }
     }
 
@@ -154,16 +204,27 @@ public class Menu {
         System.out.println("Select your role:");
         System.out.println("1- Pharmaceutical");
         System.out.println("2- Laboratory");
-        System.out.println("3- Exit");
-        int opcao = input.nextInt();
-        input.nextLine();
-        if (opcao == 1) {
+        System.out.println("3- Go Back");
+        System.out.println("4 - Exit");
+        System.out.print("Answer: ");
+        int option = 0;
+        try {
+            option = input.nextInt();
+        }
+        catch (InputMismatchException e){
+            System.out.println("Invalid Option");
+            this.menu_confirm_user();
+        }
+        if (option == 1) {
             while (true) {
                 if (HandlerUC01.login_pharmaceutical(this.sistema)){
                     this.pharmaceutical_menu();
                 }
                 else{
                     System.out.println("Username or Password incorrect");
+                    if (!HandlerUC01.try_again(sistema)){
+                        break;
+                    }
                 }
             }
         }
@@ -174,11 +235,21 @@ public class Menu {
                 }
                 else {
                     System.out.println("Username or Password incorrect");
+                    if (!HandlerUC01.try_again(sistema)){
+                        break;
+                    }
                 }
             }
         }
         else if (opcao == 3) {
             this.inical_menu();
+        }
+        else if (option == 4) {
+            this.exit();
+        }
+        else {
+            System.out.println("Invalid Option");
+            this.menu_confirm_user();
         }
     }
 
@@ -190,26 +261,46 @@ public class Menu {
         System.out.println("3 - Search drugs");
         System.out.println("4 - Search Surveillance");
         System.out.println("5 - Search your food interactions");
-        System.out.println("6- Exit");
-        int option = input.nextInt();
-        input.nextLine();
+        System.out.println("6 - Go Back");
+        System.out.println("7 - Exit");
+        System.out.print("Answer: ");
+        int option = 0;
+        try {
+            option = input.nextInt();
+        }
+        catch (InputMismatchException e){
+            System.out.println("Invalid Option");
+            this.pharmaceutical_menu();
+        }
         if (option == 1) {
             //Implementar o apagar das interações que fizeram
+            this.pharmaceutical_menu();
         }
-        if (option == 2) {
+        else if (option == 2) {
             HandlerUC05.create_foodInteractions(sistema);
+            this.pharmaceutical_menu();
         }
-        if (option == 3) {
-            HandlerUC09.pesquisar_Interacao_Alimentar(sistema);
+        else if (option == 3) {
+            HandlerUC09.search_foodInteraction(sistema);
+            this.pharmaceutical_menu();
         }
-        if (option == 4) {
+        else if (option == 4) {
             HandlerUC10.search_surveillance(sistema);
+            this.pharmaceutical_menu();
         }
-        if (option == 5) {
+        else if (option == 5) {
             // lista os 10 primeiros dele
+            this.pharmaceutical_menu();
         }
-        if (option == 6) {
+        else if (option == 6) {
             this.inical_menu();
+        }
+        else if (option == 7) {
+            this.exit();
+        }
+        else {
+            System.out.println("Invalid Option");
+            this.pharmaceutical_menu();
         }
     }
 
@@ -221,31 +312,51 @@ public class Menu {
         System.out.println("3 - Search drugs");
         System.out.println("4 - Search Surveillance");
         System.out.println("5 - Search your drugs");
-        System.out.println("6- Exit");
-        System.out.printf("Answer: ");
-        int option = input.nextInt();
-        input.nextLine();
+        System.out.println("6 - Go Back");
+        System.out.println("7 - Exit");
+        System.out.print("Answer: ");
+        int option = 0;
+        try {
+            option = input.nextInt();
+        }
+        catch (InputMismatchException e){
+            System.out.println("Invalid Option");
+            this.laboratory_menu();
+        }
         if (option == 1) {
             HandlerUC07.create_Drug(sistema);
+            this.laboratory_menu();
         }
-        if (option == 2) {
+        else if (option == 2) {
             // apagar medicamento
+            this.laboratory_menu();
         }
-        if (option == 3) {
-            HandlerUC09.pesquisar_Interacao_Alimentar(sistema);
+        else if (option == 3) {
+            HandlerUC09.search_foodInteraction(sistema);
+            this.laboratory_menu();
         }
-        if (option == 4) {
+        else if (option == 4) {
             HandlerUC10.search_surveillance(sistema);
+            this.laboratory_menu();
         }
-        if (option == 5) {
+        else if (option == 5) {
             //lista os 10 primeiros dele
+            this.laboratory_menu();
         }
-        if (option == 6) {
+        else if (option == 6) {
             this.inical_menu();
+        }
+        else if (option == 7) {
+            this.exit();
+        }
+        else {
+            System.out.println("Invalid Option");
+            this.laboratory_menu();
         }
     }
 
     public void exit(){
+        System.out.println("\nGoing to sleep\n");
         Sistemaseeder sistemaseeder = new Sistemaseeder(sistema.getDrugs(), sistema.getSubstances(),
                                                         sistema.getFoodInteractions(), sistema.getLaboratories());
         sistemaseeder.gravar();
