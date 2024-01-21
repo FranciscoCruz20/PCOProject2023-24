@@ -51,7 +51,6 @@ public class HandlerUC07 {
             String opcaob = input.nextLine();
             if (opcaob.equals("yes")) {
                 Drug drug = DrugCreator.create_drug(name, form, dosage, laboratory, list_substances);
-
                 if (sistema.exist_drug(drug)){
                     System.out.println("Drug already exists");
                 }

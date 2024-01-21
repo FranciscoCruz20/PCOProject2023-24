@@ -145,7 +145,7 @@ public class Sistema {
 
     public boolean exist_drug(Drug drug){
         for (Drug drug1: drugs){
-            if (drug.equals(drug)){
+            if (drug.equals(drug1)){
                 return true;
             }
         }
