@@ -21,9 +21,11 @@ public class HandlerUC09 {
             if (dic_substance_foodInteractions.isEmpty()) {
                 return;
             }
+            if (substances.contains("")){
+                System.out.println("That drug doesnt have active substances!");
+                return;
+            }
             for (String substance : substances) {
-                System.out.println(dic_substance_foodInteractions);
-                System.out.println(substance);
                 for (FoodInteractions foodInteraction : dic_substance_foodInteractions.get(substance)) {
                     dic_food_interaction_substance.put(foodInteraction, substance);
                     foodInteractions.add(foodInteraction);

@@ -134,6 +134,20 @@ public class Sistema {
         return false;
     }
 
+    /**
+     * Método que procura a existência de um laboratory
+     * @param name
+     * @return true caso laboratory exista, false caso contrário
+     */
+    public boolean exist_Laboratory(String name){
+        for (Laboratory laboratory: laboratories){
+            if (laboratory.getName().equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean exist_foodInteraction(FoodInteractions foodInteraction){
         for (FoodInteractions foodInteraction1: foodInteractions){
             if (foodInteraction.equals(foodInteraction1)){
@@ -207,22 +221,46 @@ public class Sistema {
         for (FoodInteractions foodInteraction: this.foodInteractions){
             ArrayList<String> substances_names = foodInteraction.lista_substances();
             for (String substance_name: substances_names){
-                if (this.dic_foodInteractions.containsKey(substance_name)){
-                    ArrayList<FoodInteractions> foodInteractions1 = this.dic_foodInteractions.get(substance_name);
-                    foodInteractions1.add(foodInteraction);
-                    this.dic_foodInteractions.put(substance_name, foodInteractions1);
-                    break;
-                }
-                else{
-                    ArrayList<FoodInteractions> foodInteractions2 = new ArrayList<>();
-                    foodInteractions2.add(foodInteraction);
-                    this.dic_foodInteractions.put(substance_name, foodInteractions2);
-                    break;
+                if (!substance_name.equals("")) {
+                    if (this.dic_foodInteractions.containsKey(substance_name)) {
+                        ArrayList<FoodInteractions> foodInteractions1 = this.dic_foodInteractions.get(substance_name);
+                        foodInteractions1.add(foodInteraction);
+                        this.dic_foodInteractions.put(substance_name, foodInteractions1);
+                    } else {
+                        ArrayList<FoodInteractions> foodInteractions2 = new ArrayList<>();
+                        foodInteractions2.add(foodInteraction);
+                        this.dic_foodInteractions.put(substance_name, foodInteractions2);
+                    }
                 }
             }
         }
     }
 
+    /**
+     * Método responsável por adiconar ao dicionário
+     * @param foodInteraction
+     */
+    public void add_to_dic(FoodInteractions foodInteraction){
+        ArrayList<String> substances_names = foodInteraction.lista_substances();
+        for (String substance_name: substances_names){
+            if (!substance_name.equals("")) {
+                if (this.dic_foodInteractions.containsKey(substance_name)) {
+                    ArrayList<FoodInteractions> foodInteractions1 = this.dic_foodInteractions.get(substance_name);
+                    foodInteractions1.add(foodInteraction);
+                    this.dic_foodInteractions.put(substance_name, foodInteractions1);
+                } else {
+                    ArrayList<FoodInteractions> foodInteractions2 = new ArrayList<>();
+                    foodInteractions2.add(foodInteraction);
+                    this.dic_foodInteractions.put(substance_name, foodInteractions2);
+                }
+            }
+        }
+    }
+
+    /**
+     *
+     * @return drugs, substances,dic_foodInteractions,foodInteractions,lista_pharmaceuticals,laboratories_user,laboratories,administrator
+     */
     @Override
     public String toString() {
         return "Sistema{" +

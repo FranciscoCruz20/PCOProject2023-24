@@ -41,7 +41,7 @@ public class Menu {
                 this.menu_confirm_user();
             }
             else if (option == 3) {
-                HandlerUC09.search_foodInteraction(sistema);
+                HandlerUC09.search_drug(sistema);
             }
             else if (option == 4) {
                 HandlerUC10.search_surveillance(sistema);
@@ -89,7 +89,7 @@ public class Menu {
                     }
 
                     else if (option == 3) {
-                        HandlerUC09.search_foodInteraction(sistema);
+                        HandlerUC09.search_drug(sistema);
                     }
                     else if (option == 4) {
                         HandlerUC10.search_surveillance(sistema);
@@ -121,10 +121,9 @@ public class Menu {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Users manage Menu:");
-        System.out.println("1- Create user");
-        System.out.println("2- Delete user");
-        System.out.println("3- Go Back");
-        System.out.println("4 - Exit");
+        System.out.println("1 - Create user");
+        System.out.println("2 - Go Back");
+        System.out.println("3 - Exit");
         System.out.print("Answer: ");
         int option = 0;
         try {
@@ -139,13 +138,9 @@ public class Menu {
             this.user_manage_menu();
             }
         else if (option == 2) {
-            //implementar o apagar user
-            this.user_manage_menu();
-        }
-        else if (option == 3) {
             this.menu_admin();
         }
-        else if (option == 4) {
+        else if (option == 3) {
             this.exit();
         }
         else{
@@ -158,11 +153,9 @@ public class Menu {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Substance manage Menu:");
-        System.out.println("1- Create substance");
-        System.out.println("2- Delete substance");
-        System.out.println("3 - Search Substance");
-        System.out.println("4 - Go Back");
-        System.out.println("5 - Exit");
+        System.out.println("1 - Create substance");
+        System.out.println("2 - Go Back");
+        System.out.println("3 - Exit");
         System.out.print("Answer: ");
         int option = 0;
         try {
@@ -177,17 +170,9 @@ public class Menu {
             this.substance_manage_menu();
         }
         else if (option == 2) {
-            //implementar o apagar substancia
-            this.substance_manage_menu();
-        }
-        else if (option == 3) {
-            //implementar a pesquisa das substancias
-            this.substance_manage_menu();
-        }
-        else if (option == 4) {
             this.menu_admin();
         }
-        else if (option == 5) {
+        else if (option == 3) {
             this.exit();
         }
         else{
@@ -256,13 +241,11 @@ public class Menu {
     public void pharmaceutical_menu() throws IOException {
         Scanner input = new Scanner(System.in);
         System.out.println("Phamaceutical Menu:");
-        System.out.println("1 - Delete your food interactions");
-        System.out.println("2 - Create food interaction");
-        System.out.println("3 - Search drugs");
-        System.out.println("4 - Search Surveillance");
-        System.out.println("5 - Search your food interactions");
-        System.out.println("6 - Go Back");
-        System.out.println("7 - Exit");
+        System.out.println("1 - Create food interaction");
+        System.out.println("2 - Search drugs");
+        System.out.println("3 - Search Surveillance");
+        System.out.println("4 - Go Back");
+        System.out.println("5 - Exit");
         System.out.print("Answer: ");
         int option = 0;
         try {
@@ -273,29 +256,21 @@ public class Menu {
             this.pharmaceutical_menu();
         }
         if (option == 1) {
-            //Implementar o apagar das interações que fizeram
-            this.pharmaceutical_menu();
-        }
-        else if (option == 2) {
             HandlerUC05.create_foodInteractions(sistema);
             this.pharmaceutical_menu();
         }
-        else if (option == 3) {
-            HandlerUC09.search_foodInteraction(sistema);
+        else if (option == 2) {
+            HandlerUC09.search_drug(sistema);
             this.pharmaceutical_menu();
         }
-        else if (option == 4) {
+        else if (option == 3) {
             HandlerUC10.search_surveillance(sistema);
             this.pharmaceutical_menu();
         }
-        else if (option == 5) {
-            // lista os 10 primeiros dele
-            this.pharmaceutical_menu();
-        }
-        else if (option == 6) {
+        else if (option == 4) {
             this.inical_menu();
         }
-        else if (option == 7) {
+        else if (option == 5) {
             this.exit();
         }
         else {
@@ -308,12 +283,10 @@ public class Menu {
         Scanner input = new Scanner(System.in);
         System.out.println("Laboratory Menu:");
         System.out.println("1 - Create drugs");
-        System.out.println("2 - Delete drugs");
-        System.out.println("3 - Search drugs");
-        System.out.println("4 - Search Surveillance");
-        System.out.println("5 - Search your drugs");
-        System.out.println("6 - Go Back");
-        System.out.println("7 - Exit");
+        System.out.println("2 - Search drugs");
+        System.out.println("3 - Search Surveillance");
+        System.out.println("4 - Go Back");
+        System.out.println("5 - Exit");
         System.out.print("Answer: ");
         int option = 0;
         try {
@@ -328,25 +301,17 @@ public class Menu {
             this.laboratory_menu();
         }
         else if (option == 2) {
-            // apagar medicamento
+            HandlerUC09.search_drug(sistema);
             this.laboratory_menu();
         }
         else if (option == 3) {
-            HandlerUC09.search_foodInteraction(sistema);
-            this.laboratory_menu();
-        }
-        else if (option == 4) {
             HandlerUC10.search_surveillance(sistema);
             this.laboratory_menu();
         }
-        else if (option == 5) {
-            //lista os 10 primeiros dele
-            this.laboratory_menu();
-        }
-        else if (option == 6) {
+        else if (option == 4) {
             this.inical_menu();
         }
-        else if (option == 7) {
+        else if (option == 5) {
             this.exit();
         }
         else {

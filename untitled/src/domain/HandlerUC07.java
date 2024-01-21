@@ -8,23 +8,33 @@ public class HandlerUC07 {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Insira os dados do Medicamento:");
-        System.out.print("Nome: ");
+        System.out.println("Insert the drug data:");
+        System.out.print("Name: ");
         String name = input.nextLine();
-        System.out.print("Forma farmaceutica: ");
+        System.out.print("Form: ");
         String form = input.nextLine();
-        System.out.print("Dosagem: ");
+        System.out.print("Dosage: ");
         String dosage = input.nextLine();
-        System.out.print("Contato de Farmacovigilancia: ");
-        String laboratory = input.nextLine();
-        String list_substances = "";
-        while (true){
-            System.out.println("Quer adicionar uma substância ativa?(sim ou nao)");
-            String resposta = input.nextLine();
-            if (resposta.equalsIgnoreCase("nao")){
+        String laboratory = "";
+        while (true) {
+            System.out.print("Laboratory: ");
+            String name_laboratory = input.nextLine();
+            if (sistema.exist_Laboratory(name_laboratory)) {
+                laboratory = name_laboratory;
                 break;
             }
-            System.out.print("Substancia Ativa: ");
+            else {
+                System.out.println("Laboratory doesnt exist");
+            }
+        }
+        String list_substances = "";
+        while (true){
+            System.out.println("Would you like to add a substance?(yes/no)");
+            String resposta = input.nextLine();
+            if (resposta.equalsIgnoreCase("no")){
+                break;
+            }
+            System.out.print("Substance: ");
             String substance = input.nextLine();
             if (substance.equals("")){
                 continue;
@@ -45,10 +55,10 @@ public class HandlerUC07 {
             sb.deleteCharAt(list_substances.length() - 1);
             list_substances = sb.toString();
         }
-        System.out.println("Pretende criar com os dados inseridos?(yes/cancelar)");
+        System.out.println("Would you like to create the drug with these data?(yes/cancel)");
         String opcao = input.nextLine();
         if (opcao.equals("yes")) {
-            System.out.println("Confirmar criação?(yes/cancelar)");
+            System.out.println("Confirm creation?(yes/cancel)");
             String opcaob = input.nextLine();
             if (opcaob.equals("yes")) {
                 Drug drug = DrugCreator.create_drug(name, form, dosage, laboratory, list_substances);
@@ -59,21 +69,21 @@ public class HandlerUC07 {
                     sistema.add_drug(drug);
                 }
             }
-            else if (opcaob.equals("cancelar")) {
-                System.out.println("Foi cancelada a criação");
+            else if (opcaob.equals("cancel")) {
+                System.out.println("The creation has been canceled");
             }
 
             else {
-                System.out.println("Opção inválida");
+                System.out.println("Invalid option");
 
             }
         }
-        else if (opcao.equals("cancelar")) {
-            System.out.println("Foi cancelada a criação");
+        else if (opcao.equals("cancel")) {
+            System.out.println("The creation has been canceled");
         }
 
         else {
-            System.out.println("Opção inválida");
+            System.out.println("Invalid Option");
             HandlerUC07.create_Drug(sistema);
         }
 

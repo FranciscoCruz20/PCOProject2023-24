@@ -13,26 +13,42 @@ public class Pharmaceutical extends User {
         this.Surveillance = surveillance;
     }
 
-    public static void create_Pharmaceutical() throws FileNotFoundException {
-        PharmaceuticalCreator.create_Pharmaceutical();
-    }
-
+    /**
+     *
+     * @return Name
+     */
     public String getName() {
         return Name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.Name = name;
     }
 
+    /**
+     *
+     * @return Surveillance
+     */
     public String getSurveillance() {
         return Surveillance;
     }
 
+    /**
+     *
+     * @param surveillance
+     */
     public void setSurveillance(String surveillance) {
         this.Surveillance = surveillance;
     }
 
+    /**
+     *
+     * @return Name, Surveillance
+     */
     @Override
     public String toString() {
         return "Pharmaceutical{" +

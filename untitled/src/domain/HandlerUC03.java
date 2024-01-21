@@ -9,12 +9,12 @@ public class HandlerUC03 {
 
     public static void create_Substance(Sistema sistema){
         Scanner input = new Scanner(System.in);
-        System.out.println("Insira os dados da Substancia Ativa:");
-        System.out.print("Nome: ");
+        System.out.println("Insert the data from the substance:");
+        System.out.print("Name: ");
         String name = input.nextLine();
-        System.out.println("Confirmar criação?(yes/cancelar)");
+        System.out.println("Confirm creation?(yes/cancel)");
         String opcao = input.nextLine();
-        if (opcao == "yes") {
+        if (opcao.equalsIgnoreCase("yes")) {
             if (!sistema.exist_Substance(name)){
                 SubstanceCreator.create_Substance(name);
             }
@@ -23,11 +23,11 @@ public class HandlerUC03 {
                 HandlerUC03.create_Substance(sistema);
             }
         }
-        else if (opcao == "cancelar") {
-            System.out.println("Foi cancelada a criação");
+        else if (opcao.equalsIgnoreCase("cancel")) {
+            System.out.println("The creation has been canceled");
         }
         else {
-            System.out.println("Opção inválida");
+            System.out.println("Invalid Option");
         }
     }
 
