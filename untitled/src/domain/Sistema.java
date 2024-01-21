@@ -112,6 +112,10 @@ public class Sistema {
         this.lista_pharmaceuticals.add(pharmaceutical);
     }
 
+    public void add_foodInteraction(FoodInteractions foodInteraction){this.foodInteractions.add(foodInteraction);}
+
+    public void add_drug(Drug drug){this.drugs.add(drug);}
+
     public Laboratory search_laboratory(String name){
         for (Laboratory laboratory: this.laboratories){
             if (laboratory.getName().equals(name)){
@@ -119,6 +123,33 @@ public class Sistema {
             }
         }
         return null;
+    }
+
+    public boolean exist_Substance(String name){
+        for (Substance substance: substances){
+            if (substance.getSubstance().equals(name)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean exist_foodInteraction(FoodInteractions foodInteraction){
+        for (FoodInteractions foodInteraction1: foodInteractions){
+            if (foodInteraction.equals(foodInteraction1)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean exist_drug(Drug drug){
+        for (Drug drug1: drugs){
+            if (drug.equals(drug)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean login_laboratory(String username, String password){
@@ -139,21 +170,37 @@ public class Sistema {
         return false;
     }
 
-    public ArrayList<FoodInteractions> searchFoodInteractions(String drugname){
-        ArrayList<FoodInteractions> FoodInteractions = new ArrayList<>();
-        for (Drug drug : drugs){
-            if (drugname.equals(drug.getName())){
-                for (String substance_name: drug.lista_substances()){
-                    for (FoodInteractions foodInteractions: dic_foodInteractions.get(substance_name)){
-                        System.out.println(foodInteractions);
-                        FoodInteractions.add(foodInteractions);
-                    }
-                }
-                return FoodInteractions;
+    public Drug search_Drug(String name){
+        for (Drug drug: drugs){
+            if (drug.getName().equals(name)){
+                return drug;
             }
         }
-        return FoodInteractions;
+        return null;
     }
+
+    public Laboratory search_Laboratory(String name){
+        for (Laboratory laboratory: laboratories){
+            if (laboratory.getName().equals(name)){
+                return laboratory;
+            }
+        }
+        return null;
+    }
+
+    public HashMap<String, ArrayList<FoodInteractions>> searchFoodInteractions(String drugname){
+        HashMap<String, ArrayList<FoodInteractions>> dic_food_substance = new HashMap<>();
+        Drug drug = search_Drug(drugname);
+        if (drug != null){
+            for (String substance_name: drug.lista_substances()){
+                dic_food_substance.put(substance_name, dic_foodInteractions.get(substance_name));
+            }
+            return dic_food_substance;
+        }
+        System.out.println("Drug doesnt exist");
+        return dic_food_substance;
+    }
+
 
 
     public void dic_transform(){

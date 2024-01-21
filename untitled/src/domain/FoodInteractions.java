@@ -2,6 +2,7 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
@@ -62,7 +63,7 @@ public class FoodInteractions {
     }
 
     public ArrayList<String> lista_substances(){
-        return new ArrayList<>(Arrays.asList(this.Substances.split("|")));
+        return new ArrayList<>(Arrays.asList(this.Substances.split("\\|")));
     }
 
     @Override
@@ -74,5 +75,19 @@ public class FoodInteractions {
                 ", bibliography='" + Bibliography + '\'' +
                 ", substances=" + Substances +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof FoodInteractions that)) return false;
+        return Objects.equals(Explanation, that.Explanation) && Objects.equals(Food, that.Food) &&
+                Objects.equals(Effect, that.Effect) && Objects.equals(Bibliography, that.Bibliography) &&
+                Objects.equals(Substances, that.Substances);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Explanation, Food, Effect, Bibliography, Substances);
     }
 }

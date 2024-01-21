@@ -10,6 +10,7 @@ public class Menu {
 
     public Menu(){
         this.sistema = SistemaLoader.create_System();
+        sistema.dic_transform();
         Pharmaceuticalloader.create_pharmaceutical_users(this.sistema);
         Laboratoryloader.create_Laboratory_users(this.sistema);
     }
@@ -33,10 +34,10 @@ public class Menu {
                 this.menu_confirm_user();
             }
             if (option == 3) {
-                // Implementar a pesquisa de medicamentos
+                HandlerUC09.pesquisar_Interacao_Alimentar(sistema);
             }
             if (option == 4) {
-                //lista os contatos
+                HandlerUC10.search_surveillance(sistema);
             }
             else {
                 System.out.println("Invalid option");
@@ -77,10 +78,10 @@ public class Menu {
                     }
 
                     if (option == 3) {
-                        //lista as droguinhas
+                        HandlerUC09.pesquisar_Interacao_Alimentar(sistema);
                     }
                     if (option == 4) {
-                        //lista os contatos
+                        HandlerUC10.search_surveillance(sistema);
                     }
                     if (option == 5) {
                         this.inical_menu();
@@ -129,7 +130,7 @@ public class Menu {
         int opcao = input.nextInt();
         input.nextLine();
         if (opcao == 1) {
-            //Implementar handler 3
+            HandlerUC03.create_Substance(sistema);
         }
         if (opcao == 2) {
             //implementar o apagar substancia
@@ -196,13 +197,13 @@ public class Menu {
             //Implementar o apagar das interações que fizeram
         }
         if (option == 2) {
-            // implementar a criação
+            HandlerUC05.create_foodInteractions(sistema);
         }
         if (option == 3) {
-            // metem o nome e dá a informação
+            HandlerUC09.pesquisar_Interacao_Alimentar(sistema);
         }
         if (option == 4) {
-            // metem o nome e dá a informação
+            HandlerUC10.search_surveillance(sistema);
         }
         if (option == 5) {
             // lista os 10 primeiros dele
@@ -214,26 +215,27 @@ public class Menu {
 
     public void laboratory_menu() throws IOException {
         Scanner input = new Scanner(System.in);
-        System.out.println("Laboratorie Menu:");
+        System.out.println("Laboratory Menu:");
         System.out.println("1 - Create drugs");
         System.out.println("2 - Delete drugs");
         System.out.println("3 - Search drugs");
         System.out.println("4 - Search Surveillance");
         System.out.println("5 - Search your drugs");
         System.out.println("6- Exit");
+        System.out.printf("Answer: ");
         int option = input.nextInt();
         input.nextLine();
         if (option == 1) {
-            //criar medicamento
+            HandlerUC07.create_Drug(sistema);
         }
         if (option == 2) {
             // apagar medicamento
         }
         if (option == 3) {
-            //mete o nome e dá a informação
+            HandlerUC09.pesquisar_Interacao_Alimentar(sistema);
         }
         if (option == 4) {
-            //mete o nome e dá a informação
+            HandlerUC10.search_surveillance(sistema);
         }
         if (option == 5) {
             //lista os 10 primeiros dele
@@ -243,7 +245,7 @@ public class Menu {
         }
     }
 
-    public void sair(){
+    public void exit(){
         Sistemaseeder sistemaseeder = new Sistemaseeder(sistema.getDrugs(), sistema.getSubstances(),
                                                         sistema.getFoodInteractions(), sistema.getLaboratories());
         sistemaseeder.gravar();

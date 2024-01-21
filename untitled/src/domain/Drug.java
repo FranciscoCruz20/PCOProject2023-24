@@ -2,6 +2,7 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Classe representativa dos medicamentos
@@ -115,7 +116,7 @@ public class Drug {
      * @return lista_substances
      */
     public ArrayList<String> lista_substances(){
-        return new ArrayList<>(Arrays.asList(this.Substances.split("|")));
+        return new ArrayList<>(Arrays.asList(this.Substances.split("\\|")));
     }
 
     /**
@@ -131,5 +132,19 @@ public class Drug {
                 ", Laboratory='" + Laboratory + '\'' +
                 ", Substances='" + Substances + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Drug drug)) return false;
+        return Objects.equals(Name, drug.Name) && Objects.equals(Form, drug.Form) &&
+                Objects.equals(Dosage, drug.Dosage) && Objects.equals(Laboratory, drug.Laboratory) &&
+                Objects.equals(Substances, drug.Substances);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Name, Form, Dosage, Laboratory, Substances);
     }
 }
